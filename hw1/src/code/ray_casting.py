@@ -221,7 +221,7 @@ if __name__ == "__main__":
     xx = 4110
     yy = 5130
     t3 = time.time()
-    for n in range(1):
+    for n in range(500):
         z_true = rc.get_true_ranges([xx, yy, math.pi/2])
     
     t4 = time.time()
