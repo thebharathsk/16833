@@ -86,6 +86,8 @@ def warp2pi(angle_rad):
     \param angle_rad Input angle in radius
     \return angle_rad_warped Warped angle to [-\pi, \pi].
     """
+    #MY IMPLEMENTATION
+    angle_rad = (angle_rad + np.pi) % (2 * np.pi) - np.pi
     return angle_rad
 
 
@@ -106,7 +108,42 @@ def init_landmarks(init_measure, init_measure_cov, init_pose, init_pose_cov):
 
     landmark = np.zeros((2 * k, 1))
     landmark_cov = np.zeros((2 * k, 2 * k))
+    
+    #MY IMPLEMENTATION
+    #extract r and beta from measurements
+    beta = init_measure[0::2, 0]
+    r = init_measure[1::2, 0]
 
+    #compute mean positions
+    #x coordinates
+    landmark[0::2, 0] = init_pose[0] + r*np.cos(beta + init_pose[2])
+    
+    #y coordinates
+    landmark[1::2, 0] = init_pose[1] + r*np.sin(beta + init_pose[2])
+    
+    #compute covariances
+    #C
+    C = np.zeros((k, 2,3))
+    C[:, 0, 0] = 1 
+    C[:, 1, 1] = 1
+    C[:, 0, 2] = -r*np.sin(beta + init_pose[2])
+    C[:, 1, 2] = r*np.cos(beta + init_pose[2])
+
+    #D
+    D = np.zeros((k, 2, 2))
+    D[:,0,0] = -r*np.sin(beta + init_pose[2])
+    D[:,0,1] = np.cos(beta + init_pose[2])
+    D[:,1,0] = r*np.cos(beta + init_pose[2])
+    D[:,1,1] = np.sin(beta + init_pose[2])
+    
+    #landmark covariances
+    landmark_cov_ = 0*C@init_pose_cov[np.newaxis]@C.transpose((0, 2, 1)) + \
+                    D@init_measure_cov[np.newaxis]@D.transpose((0, 2, 1)) #k x 2 x 2
+    
+    #reshape covariance vector
+    for idx in range(k):
+        landmark_cov[2*idx:2*idx+2, 2*idx:2*idx+2] = landmark_cov_[idx]
+    
     return k, landmark, landmark_cov
 
 
@@ -122,8 +159,38 @@ def predict(X, P, control, control_cov, k):
     \return X_pre Predicted X state of shape (3 + 2k, 1).
     \return P_pre Predicted P covariance of shape (3 + 2k, 3 + 2k).
     '''
-
-    return X, P
+    #MY IMPLEMENTATION
+    #make a copy of arrays
+    X_new = X.copy()
+    P_new = P.copy()
+    
+    #update state based on control data
+    X_new[0] = X[0] + control[0]*np.cos(X[2])
+    X_new[1] = X[1] + control[0]*np.sin(X[2])
+    X_new[2] = warp2pi(X[2] + control[1])
+    
+    #update covariance
+    #initialize Jacobian matrices
+    A = np.zeros((3,3))
+    B = np.zeros((3,3))
+    
+    #compute Jacobian matrices
+    A[0,0] = 1
+    A[0,2] = -control[0]*np.sin(X[2])
+    A[1,1] = 1
+    A[1,2] = control[0]*np.cos(X[2])
+    A[2,2] = 1
+    
+    B[0,0] = np.cos(X[2])
+    B[0,1] = -np.sin(X[2])
+    B[1,0] = np.sin(X[2])
+    B[1,1] = np.cos(X[2])
+    B[2,2] = 1
+    
+    #compute output covariance
+    P_new[0:3, 0:3] = A@P[0:3,0:3]@A.T + B@control_cov@B.T
+        
+    return X_new, P_new
 
 
 def update(X_pre, P_pre, measure, measure_cov, k):
@@ -138,9 +205,68 @@ def update(X_pre, P_pre, measure, measure_cov, k):
     \return X Updated X state of shape (3 + 2k, 1).
     \return P Updated P covariance of shape (3 + 2k, 3 + 2k).
     '''
-
-    return X_pre, P_pre
-
+    #MY IMPLEMENTATION
+    #make a copy of arrays
+    X_new = X_pre.copy()
+    P_new = P_pre.copy()
+    
+    #extract positions of landmarks
+    #lx
+    lx = X_pre[3::2,0]
+    
+    #ly
+    ly = X_pre[4::2,0]
+    
+    #extract l_x-x_t and l_y-y_t 
+    dx = lx - X_pre[0,0]
+    dy = ly - X_pre[1,0]
+    
+    #Compute H_p, H_l and H_t
+    #initialize
+    H_p = np.zeros((2*k, 3))
+    H_l = np.zeros((2*k, 2*k))
+    H_t = np.zeros((2*k, 3+2*k))
+    
+    #H_p
+    H_p[0::2, 0] = dy/(dx**2 + dy**2)
+    H_p[0::2, 1] = -dx/(dx**2 + dy**2)
+    H_p[0::2, 2] = -1
+    H_p[1::2, 0] = -dx/np.sqrt(dx**2 + dy**2)
+    H_p[1::2, 1] = -dy/np.sqrt(dx**2 + dy**2)
+    
+    #H_l
+    for idx in range(k):
+        H_l[2*idx, 2*idx] = -dy[idx]/(dx[idx]**2 + dy[idx]**2)
+        H_l[2*idx, 2*idx+1] = dx[idx]/(dx[idx]**2 + dy[idx]**2)
+        H_l[2*idx+1, 2*idx] = dx[idx]/np.sqrt(dx[idx]**2 + dy[idx]**2)
+        H_l[2*idx+1, 2*idx+1] = dy[idx]/np.sqrt(dx[idx]**2 + dy[idx]**2)
+        
+    #H_t
+    H_t = np.hstack((H_p, H_l))
+    
+    #Populate Q matrix
+    Q_t = np.zeros((2*k, 2*k))
+    for idx in range(k):
+        Q_t[2*idx:2*idx+2, 2*idx:2*idx+2] = measure_cov
+    
+    #Compute Kalman Gain
+    K_t = P_pre@H_t.T@np.linalg.inv(H_t@P_pre@H_t.T + Q_t)
+    
+    #Compute expected measurement vector
+    z_exp = np.zeros((2*k,1))
+    z_exp[0::2,0] = warp2pi(np.arctan2(dy, dx) - X_pre[2,0])
+    z_exp[1::2,0] = np.sqrt(dx**2 + dy**2)
+    
+    #compute error vector
+    z_err = measure - z_exp
+    
+    #compute mean of state vector
+    X_new = X_pre + K_t@z_err
+    
+    #compute covariance
+    P_new = (np.eye(3 + 2*k) - K_t@H_t)@P_pre
+    
+    return X_new, P_new
 
 def evaluate(X, P, k):
     '''
@@ -156,6 +282,27 @@ def evaluate(X, P, k):
     plt.scatter(l_true[0::2], l_true[1::2])
     plt.draw()
     plt.waitforbuttonpress(0)
+    
+    #MY IMPLEMENTATION
+    #reshape
+    l_gt = np.reshape(l_true, (-1, 2, 1))
+    l_pred = np.reshape(X[3:,0], (-1, 2, 1))
+    l_sigma = np.zeros((k, 2, 2))
+    for idx in range(k):
+        l_sigma[idx] = P[3+2*idx : 3+2*idx+2, 3+2*idx : 3+2*idx+2]
+        
+    #eucledian distance
+    e_dist = np.sqrt(np.sum((l_pred - l_gt)**2, axis=1)).flatten()
+    
+    #mahalanobis distance
+    m_dist = (l_pred - l_gt).transpose((0, 2, 1))@l_sigma@(l_pred - l_gt)
+    m_dist = np.sqrt(m_dist).flatten()
+    
+    print('Euclidean distance')
+    print(e_dist)
+    print('Mahalanobis distance')
+    print(m_dist)
+    
 
 
 def main():
@@ -221,7 +368,7 @@ def main():
             X_pre, P_pre = predict(X, P, control, control_cov, k)
 
             draw_traj_and_pred(X_pre, P_pre)
-
+            
         # Measurement
         else:
             print(f'{t}: Update step')
@@ -234,10 +381,10 @@ def main():
             draw_traj_and_map(X, last_X, P, t)
             last_X = X
             t += 1
-
+                        
+    plt.savefig('result.png')
     # EVAL: Plot ground truth landmarks and analyze distances
     evaluate(X, P, k)
-
 
 if __name__ == "__main__":
     main()
