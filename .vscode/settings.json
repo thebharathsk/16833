@@ -1,0 +1,9 @@
+{
+    "grammarly.selectors": [
+        {
+            "language": "latex",
+            "scheme": "file",
+            "pattern": "hw2/report/hw2.tex"
+        }
+    ]
+}

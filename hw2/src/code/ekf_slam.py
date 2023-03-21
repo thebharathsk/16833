@@ -137,7 +137,7 @@ def init_landmarks(init_measure, init_measure_cov, init_pose, init_pose_cov):
     D[:,1,1] = np.sin(beta + init_pose[2])
     
     #landmark covariances
-    landmark_cov_ = 0*C@init_pose_cov[np.newaxis]@C.transpose((0, 2, 1)) + \
+    landmark_cov_ = C@init_pose_cov[np.newaxis]@C.transpose((0, 2, 1))*0 + \
                     D@init_measure_cov[np.newaxis]@D.transpose((0, 2, 1)) #k x 2 x 2
     
     #reshape covariance vector
@@ -303,8 +303,6 @@ def evaluate(X, P, k):
     print('Mahalanobis distance')
     print(m_dist)
     
-
-
 def main():
     # TEST: Setup uncertainty parameters
     sig_x = 0.25;

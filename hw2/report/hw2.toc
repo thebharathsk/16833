@@ -17,8 +17,8 @@
 \contentsline {subsection}{\numberline {3.2}Q2}{7}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}$\sigma _x$}{7}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}$\sigma _y$}{8}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}$\sigma _{\alpha }$}{9}{subsubsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.4}$\sigma _{\beta }$}{10}{subsubsection.3.2.4}%
-\contentsline {subsubsection}{\numberline {3.2.5}$\sigma _r$}{11}{subsubsection.3.2.5}%
-\contentsline {subsubsection}{\numberline {3.2.6}Observations}{11}{subsubsection.3.2.6}%
-\contentsline {subsection}{\numberline {3.3}Q3}{11}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.2.3}$\sigma _{\alpha }$}{8}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}$\sigma _{\beta }$}{9}{subsubsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.5}$\sigma _r$}{9}{subsubsection.3.2.5}%
+\contentsline {subsubsection}{\numberline {3.2.6}Observations}{9}{subsubsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.3}Q3}{10}{subsection.3.3}%
