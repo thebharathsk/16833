@@ -4,6 +4,10 @@
             "language": "latex",
             "scheme": "file",
             "pattern": "hw2/report/hw2.tex"
+        },
+        {
+            "language": "latex",
+            "scheme": "file"
         }
     ]
 }
