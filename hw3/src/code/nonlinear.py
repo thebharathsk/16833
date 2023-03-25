@@ -2,7 +2,7 @@
     Initially written by Ming Hsiao in MATLAB
     Rewritten in Python by Wei Dong (weidong@andrew.cmu.edu), 2021
 '''
-
+import os
 import numpy as np
 import scipy.linalg
 from scipy.sparse import csr_matrix
@@ -30,7 +30,7 @@ def init_states(odoms, observations, n_poses, n_landmarks):
     '''
     traj = np.zeros((n_poses, 2))
     landmarks = np.zeros((n_landmarks, 2))
-    landmarks_mask = np.zeros((n_landmarks), dtype=np.bool)
+    landmarks_mask = np.zeros((n_landmarks), dtype=np.bool_)
 
     for i in range(len(odoms)):
         traj[i + 1, :] = traj[i, :] + odoms[i, :]
@@ -58,7 +58,7 @@ def odometry_estimation(x, i):
     \return odom Odometry (\Delta x, \Delta) in the shape (2, )
     '''
     # TODO: return odometry estimation
-    odom = np.zeros((2, ))
+    odom = (x[(i+1)*2:(i+2)*2] - x[i*2:(i+1)*2]).flatten()
 
     return odom
 
@@ -74,6 +74,16 @@ def bearing_range_estimation(x, i, j, n_poses):
     # TODO: return bearing range estimations
     obs = np.zeros((2, ))
 
+    #read pose, landmark and position data
+    pose = x[i*2:(i+1)*2]
+    landmark = x[n_poses*2 + j*2: n_poses*2 + (j+1)*2]
+    rel_pos = landmark - pose
+    rel_pos = rel_pos.flatten()
+    
+    #compute bearing angle and distance 
+    obs[0] = warp2pi(np.arctan2(rel_pos[1], rel_pos[0]))
+    obs[1] = np.linalg.norm(rel_pos)
+    
     return obs
 
 
@@ -88,6 +98,22 @@ def compute_meas_obs_jacobian(x, i, j, n_poses):
     # TODO: return jacobian matrix
     jacobian = np.zeros((2, 4))
 
+    #read pose, landmark and position data
+    pose = x[i*2:(i+1)*2]
+    landmark = x[n_poses*2 + j*2 : n_poses*2 + (j+1)*2]
+    rel_pos = landmark - pose
+    rel_pos = rel_pos.flatten()
+    
+    #compute useful variables
+    dx = rel_pos[0]
+    dy = rel_pos[1]
+    dx_2 = dx**2
+    dy_2 = dy**2
+    
+    #populate jacobian
+    jacobian[0] = [dy, -dx, -dy, dx]/(dx_2+dy_2)
+    jacobian[1] = [-dx, -dy, dx, dy]/np.sqrt(dx_2+dy_2)
+    
     return jacobian
 
 
@@ -111,20 +137,78 @@ def create_linear_system(x, odoms, observations, sigma_odom, sigma_observation,
 
     M = (n_odom + 1) * 2 + n_obs * 2
     N = n_poses * 2 + n_landmarks * 2
-
+    offset_y = (n_odom + 1) * 2
+    offset_x = n_poses * 2
+    
     A = np.zeros((M, N))
-    b = np.zeros((M, ))
+    B = np.zeros((M, ))
 
     sqrt_inv_odom = np.linalg.inv(scipy.linalg.sqrtm(sigma_odom))
     sqrt_inv_obs = np.linalg.inv(scipy.linalg.sqrtm(sigma_observation))
-
+    
+    #MY IMPLEMENTATION
+    #initialize Jacobian
+    H = np.zeros((2,4))
+    H[0,0] = -1
+    H[1,1] = -1
+    H[0,2] = 1
+    H[1,3] = 1
+    
     # TODO: First fill in the prior to anchor the 1st pose at (0, 0)
-
+    A[0, 0] = 1
+    A[1, 1] = 1
+    
+    B[0:2] = -x[0:2]
+    
     # TODO: Then fill in odometry measurements
+    for i, odom in enumerate(odoms):
+        #reshape odomometry reading
+        odom = odom.flatten()
 
+        #estimate expected measurement at x
+        f_x_0 = odometry_estimation(x, i)
+        
+        #compute measurement error
+        odom_err = odom - f_x_0
+        
+        #find a and b
+        a = sqrt_inv_odom@H
+        b = sqrt_inv_odom@odom_err
+        
+        #add a and b to A and B
+        A[(i+1)*2:(i+2)*2, i*2:(i+2)*2] = a
+        B[(i+1)*2:(i+2)*2] = b
+        
     # TODO: Then fill in landmark measurements
+    for i, obs in enumerate(observations):
+        #read indices
+        m, n = int(obs[0]), int(obs[1])
+        
+        #reshape observation
+        obs = obs[2:].flatten()
 
-    return csr_matrix(A), b
+        #estimate expected measurement at x
+        g_x_0 = bearing_range_estimation(x, m, n, n_poses)
+        
+        #compute measurement error
+        obs_err = obs - g_x_0
+        
+        #use warp angle
+        obs_err[0] = warp2pi(obs_err[0])
+        
+        #estimate jacobian
+        J = compute_meas_obs_jacobian(x, m, n, n_poses)
+        
+        #find a and b
+        a = sqrt_inv_obs@J
+        b = sqrt_inv_obs@obs_err
+        
+        #add a and b to A and B
+        A[offset_y + i*2 : offset_y + (i+1)*2, m*2:(m+1)*2] = a[:,0:2]
+        A[offset_y + i*2 : offset_y + (i+1)*2, offset_x + n*2:offset_x + (n+1)*2] = a[:,2:]
+        B[offset_y + i*2 : offset_y + (i+1)*2] = b
+
+    return csr_matrix(A), B
 
 
 if __name__ == '__main__':
@@ -172,4 +256,9 @@ if __name__ == '__main__':
             x = x + dx
         traj, landmarks = devectorize_state(x, n_poses)
         print('After optimization')
-        plot_traj_and_landmarks(traj, landmarks, gt_traj, gt_landmarks)
+        
+        #create file name
+        file = os.path.join('./../../report/results/', \
+                            args.method[0]+ '_'+\
+                            os.path.basename(args.data).split('.npz')[0] + '_map.png')
+        plot_traj_and_landmarks(traj, landmarks, gt_traj, gt_landmarks, save_path=file)

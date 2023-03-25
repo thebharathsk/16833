@@ -18,7 +18,7 @@ def devectorize_state(x, n_poses):
     return traj, landmarks
 
 
-def plot_traj_and_landmarks(traj, landmarks, gt_traj, gt_landmarks):
+def plot_traj_and_landmarks(traj, landmarks, gt_traj, gt_landmarks, save_path=None):
     plt.plot(gt_traj[:, 0], gt_traj[:, 1], 'b-', label='gt poses')
     plt.scatter(gt_landmarks[:, 0],
                 gt_landmarks[:, 1],
@@ -35,4 +35,10 @@ def plot_traj_and_landmarks(traj, landmarks, gt_traj, gt_landmarks):
                 label='landmarks')
 
     plt.legend()
-    plt.show()
+    
+    #save figure
+    if save_path is not None:
+        plt.savefig(save_path)
+    
+    #plt.show()
+    plt.close()

@@ -3,6 +3,7 @@
     Rewritten in Python by Wei Dong (weidong@andrew.cmu.edu), 2021
 '''
 
+import os
 import time
 import numpy as np
 import scipy.linalg
@@ -61,7 +62,7 @@ def create_linear_system(odoms, observations, sigma_odom, sigma_observation,
 
         #find a and b
         a = sqrt_inv_odom@H
-        b = -sqrt_inv_odom@odom
+        b = sqrt_inv_odom@odom
         
         #add a and b to A and B
         A[(i+1)*2:(i+2)*2, i*2:(i+2)*2] = a
@@ -77,7 +78,7 @@ def create_linear_system(odoms, observations, sigma_odom, sigma_observation,
 
         #find a and b
         a = sqrt_inv_obs@H
-        b = -sqrt_inv_obs@obs
+        b = sqrt_inv_obs@obs
         
         #add a and b to A and B
         A[offset_y + i*2 : offset_y + (i+1)*2, m*2:(m+1)*2] = a[:,0:2]
@@ -110,14 +111,14 @@ if __name__ == '__main__':
     # Plot gt trajectory and landmarks for a sanity check.
     gt_traj = data['gt_traj']
     gt_landmarks = data['gt_landmarks']
-    plt.plot(gt_traj[:, 0], gt_traj[:, 1], 'b-', label='gt trajectory')
-    plt.scatter(gt_landmarks[:, 0],
-                gt_landmarks[:, 1],
-                c='b',
-                marker='+',
-                label='gt landmarks')
-    plt.legend()
-    plt.show()
+    # plt.plot(gt_traj[:, 0], gt_traj[:, 1], 'b-', label='gt trajectory')
+    # plt.scatter(gt_landmarks[:, 0],
+    #             gt_landmarks[:, 1],
+    #             c='b',
+    #             marker='+',
+    #             label='gt landmarks')
+    # plt.legend()
+    # plt.show()
 
     n_poses = len(gt_traj)
     n_landmarks = len(gt_landmarks)
@@ -146,9 +147,21 @@ if __name__ == '__main__':
 
         if R is not None:
             plt.spy(R)
-            plt.show()
+            #plt.show()
+            
+            #save plot
+            #create file name
+            file = os.path.join('./../../report/results/', \
+                                args.method[0]+ '_'+\
+                                os.path.basename(args.data).split('.npz')[0] + '_sparsity.png')
+            plt.savefig(file)
+            plt.close()
 
         traj, landmarks = devectorize_state(x, n_poses)
         
         # Visualize the final result
-        plot_traj_and_landmarks(traj, landmarks, gt_traj, gt_landmarks)
+        #create file name
+        file = os.path.join('./../../report/results/', \
+                            args.method[0]+ '_'+\
+                            os.path.basename(args.data).split('.npz')[0] + '_map.png')
+        plot_traj_and_landmarks(traj, landmarks, gt_traj, gt_landmarks, save_path=file)

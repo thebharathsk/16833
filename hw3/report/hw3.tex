@@ -38,7 +38,7 @@
 \maketitle
 
 \tableofcontents
-\section{Measurement function}
+\section{Linear SLAM}
 \subsection{Odometry}
 \subsubsection{Measurement Function}
 Since the odometry results in a change in position, the measurement function is simply
@@ -57,5 +57,13 @@ The Jacobian of measurement function is
 \[H_l(\mathbf{r}^t, \mathbf{l}^{k}) = \begin{bmatrix}
   -1 & 0 & 1 & 0\\
   0 & -1 & 0 & 1\\
+\end{bmatrix}\]
+
+\section{Non-Linear SLAM}
+\subsection{Landmark}
+\subsubsection{Jacobian}
+\[H_l(\mathbf{r}^t, \mathbf{l}^{k}) = \begin{bmatrix}
+  \frac{l_y - r_y}{(l_x - r_x)^2 + (l_y - r_y)^2} & \frac{-(l_x - r_x)}{(l_x - r_x)^2 + (l_y - r_y)^2} & \frac{-(l_y - r_y)}{(l_x - r_x)^2 + (l_y - r_y)^2} & \frac{l_x - r_x}{(l_x - r_x)^2 + (l_y - r_y)^2}\\
+  \frac{-(l_x - r_x)}{\sqrt{(l_x - r_x)^2 + (l_y - r_y)^2}} & \frac{-(l_y - r_y)}{\sqrt{(l_x - r_x)^2 + (l_y - r_y)^2}} & \frac{l_x - r_x}{\sqrt{(l_x - r_x)^2 + (l_y - r_y)^2}} & \frac{l_y - r_y}{\sqrt{(l_x - r_x)^2 + (l_y - r_y)^2}}\\
 \end{bmatrix}\]
 \end{document}
