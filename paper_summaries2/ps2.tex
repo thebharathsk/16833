@@ -1,0 +1,59 @@
+\documentclass[12pt, a4paper]{article}
+
+
+% A pretty common set of packages
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{float}
+\usepackage{bm}
+\usepackage{physics}
+\usepackage{subcaption}
+
+\DeclareRobustCommand{\uvec}[1]{{%
+  \ifcsname uvec#1\endcsname
+     \csname uvec#1\endcsname
+   \else
+    \bm{\hat{\mathbf{#1}}}%
+   \fi
+}}
+\newcommand{\olsi}[1]{\,\overline{\!{#1}}} % overline short italic
+
+\usepackage[colorlinks=true, 
+    linkcolor=blue,          % color of internal links
+    citecolor=blue,        % color of links to bibliography
+    filecolor=blue,      % color of file links
+    urlcolor=blue]{hyperref}
+
+\title{[16-833] Paper Summaries 2}
+\author{Bharath Somayajula}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\section{Kinect Fusion}
+\begin{enumerate}
+  \item The paper describes a method to perform real time volumetric reconstruction using Kinect sensor of large indoor scenes
+  \item In the first step, A vertex map and surface normal map are constructed at multiple scales after performing bilateral filter on raw depth obtained from sensor to improve quality of depth
+  \item In the second step, Pose is then computed between the map and measurement by linearizing the non-linear projective transformation under slow-motion assumption
+  \item In the third step, with the pose information available, the depth measurement is integrated into the map by using Truncated Signed Distance Function(TSDF)
+  \item In the fourth step, ray casting is performed on signed distance function to predict the surface which is given by places where SDF is 0
+  \item The system has been shown to preform both real time reconstruction of an object and indoor environment for AR applications
+\end{enumerate}
+\section{NERF}
+\begin{enumerate}
+  \item The paper presents a new technique to perform novel view synthesis for a scene using deep learning where the model accepts viewing angle and location as inputs and produces volume density and color as output
+  \item To preserve high frequency features in outputs, the inputs are first transformed using high frequency sine and cosine functions to map them to a higher dimensional input (20 for position and 8 for viewing angle)
+  \item Since much of the scene consists of empty space, two networks- coarse and fine- are used to compute color and volume density along a ray
+  \item The network architecture involves a series a simple fully connected layers followed by ReLU non-linearities with skip connections
+  \item The loss function used to optimize the networks involve L2 loss between predicted and ground truth color information obtained by COLMAP software on collected data
+  \item The model achieves SOTA results on DeepVoxels dataset for novel view synthesis task
+\end{enumerate}
+\end{document}
