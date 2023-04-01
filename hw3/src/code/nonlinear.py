@@ -244,8 +244,10 @@ if __name__ == '__main__':
     for method in args.method:
         print(f'Applying {method}')
         traj, landmarks = init_states(odom, observations, n_poses, n_landmarks)
-        print('Before optimization')
-        plot_traj_and_landmarks(traj, landmarks, gt_traj, gt_landmarks)
+        file = os.path.join('./../../report/results/nonlinear/', \
+                            args.method[0]+ '_'+\
+                            os.path.basename(args.data).split('.npz')[0] + '_map_before.png')
+        plot_traj_and_landmarks(traj, landmarks, gt_traj, gt_landmarks, save_path=file)
 
         # Iterative optimization
         x = vectorize_state(traj, landmarks)
@@ -255,10 +257,11 @@ if __name__ == '__main__':
             dx, _ = solve(A, b, method)
             x = x + dx
         traj, landmarks = devectorize_state(x, n_poses)
-        print('After optimization')
         
         #create file name
-        file = os.path.join('./../../report/results/', \
+        file = os.path.join('./../../report/results/nonlinear/', \
                             args.method[0]+ '_'+\
-                            os.path.basename(args.data).split('.npz')[0] + '_map.png')
+                            os.path.basename(args.data).split('.npz')[0] + '_map_after.png')
         plot_traj_and_landmarks(traj, landmarks, gt_traj, gt_landmarks, save_path=file)
+    
+    print()

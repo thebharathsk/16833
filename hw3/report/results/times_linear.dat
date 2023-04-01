@@ -1,0 +1,17 @@
+regular
+-------
+default takes 0.03235316276550293s on average
+pinv takes 1.2687339782714844s on average
+qr takes 0.2876622676849365s on average
+lu takes 0.014993906021118164s on average
+qr_colamd takes 0.25530266761779785s on average
+lu_colamd takes 0.03464531898498535s on average
+
+loop
+----
+default takes 0.0038900375366210938s on average
+pinv takes 0.12015557289123535s on average
+qr takes 0.1900944709777832s on average
+lu takes 0.017468690872192383s on average
+qr_colamd takes 0.01988053321838379s on average
+lu_colamd takes 0.004179954528808594s on average

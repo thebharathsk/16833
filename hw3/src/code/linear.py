@@ -151,7 +151,7 @@ if __name__ == '__main__':
             
             #save plot
             #create file name
-            file = os.path.join('./../../report/results/', \
+            file = os.path.join('./../../report/results/linear/', \
                                 args.method[0]+ '_'+\
                                 os.path.basename(args.data).split('.npz')[0] + '_sparsity.png')
             plt.savefig(file)
@@ -161,7 +161,7 @@ if __name__ == '__main__':
         
         # Visualize the final result
         #create file name
-        file = os.path.join('./../../report/results/', \
+        file = os.path.join('./../../report/results/linear/', \
                             args.method[0]+ '_'+\
                             os.path.basename(args.data).split('.npz')[0] + '_map.png')
         plot_traj_and_landmarks(traj, landmarks, gt_traj, gt_landmarks, save_path=file)

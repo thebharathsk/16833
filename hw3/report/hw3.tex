@@ -58,7 +58,140 @@ The Jacobian of measurement function is
   -1 & 0 & 1 & 0\\
   0 & -1 & 0 & 1\\
 \end{bmatrix}\]
+\subsection{Results for \textit{2d\_linear.npz}}
+\subsubsection{\textit{default}}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./results/linear/default_2d_linear_map.png}
+  \caption{Results with \textit{default}}
+\end{figure}
+\subsubsection{\textit{pinv}}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./results/linear/pinv_2d_linear_map.png}
+  \caption{Results with \textit{pinv}}
+\end{figure}
+\subsubsection{\textit{lu}}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./results/linear/lu_2d_linear_map.png}
+  \caption{Results with \textit{lu}}
+\end{figure}
+\subsubsection{\textit{qr}}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./results/linear/qr_2d_linear_map.png}
+  \caption{Results with \textit{qr}}
+\end{figure}
+\subsubsection{\textit{lu\_colamd}}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./results/linear/lu_colamd_2d_linear_map.png}
+  \caption{Results with \textit{lu\_colamd}}
+\end{figure}
+\subsubsection{\textit{qr\_colamd}}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./results/linear/qr_colamd_2d_linear_map.png}
+  \caption{Results with \textit{qr\_colamd}}
+\end{figure}
+\subsubsection{Time}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|}
+  \hline
+  \textbf{Method} & \textbf{Time(ms)}\\
+  \hline
+  \textit{default} & 32\\\hline
+  \textit{pinv} & 1268\\\hline
+  \textit{lu} & 288\\\hline
+  \textit{qr} & 15\\\hline
+  \textit{lu\_colamd} & 255\\\hline
+  \textit{qr\_colamd} & 35\\\hline
+  \hline
+  \end{tabular}
+  \caption{Optimization time for each method in milliseconds}
+  \end{table}
+\subsubsection{Conclusions}
+\begin{enumerate}
+  \item The \textit{pinv} method is the slowest since it involves computation of matrix inverse
+  \item The \textit{qr} method is faster than \textit{lu} since QR factorization takes advantage of sparsity of $A$ matrix during factorization process
 
+\end{enumerate}
+\subsection{Results for \textit{2d\_linear\_loop.npz}}
+\subsubsection{\textit{default}}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./results/linear/default_2d_linear_loop_map.png}
+  \caption{Results with \textit{default}}
+\end{figure}
+\subsubsection{\textit{pinv}}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./results/linear/pinv_2d_linear_loop_map.png}
+  \caption{Results with \textit{pinv}}
+\end{figure}
+\subsubsection{\textit{lu}}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./results/linear/lu_2d_linear_loop_map.png}
+  \caption{Results with \textit{lu}}
+\end{figure}
+\subsubsection{\textit{qr}}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./results/linear/qr_2d_linear_loop_map.png}
+  \caption{Results with \textit{qr}}
+\end{figure}
+\subsubsection{\textit{lu\_colamd}}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./results/linear/lu_colamd_2d_linear_loop_map.png}
+  \caption{Results with \textit{lu\_colamd}}
+\end{figure}
+\subsubsection{\textit{qr\_colamd}}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./results/linear/qr_colamd_2d_linear_loop_map.png}
+  \caption{Results with \textit{qr\_colamd}}
+\end{figure}
+\subsubsection{Time}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|}
+  \hline
+  \textbf{Method} & \textbf{Time(ms)}\\
+  \hline
+  \textit{default} & 4\\\hline
+  \textit{pinv} & 120\\\hline
+  \textit{lu} & 190\\\hline
+  \textit{qr} & 17\\\hline
+  \textit{lu\_colamd} & 20\\\hline
+  \textit{qr\_colamd} & 4\\\hline
+  \hline
+  \end{tabular}
+  \caption{Optimization time for each method in milliseconds}
+  \end{table}
+\subsubsection{Conclusions}
+\begin{enumerate}
+  \item The general trend in performance observed for \textit{2d\_linear.npz}, i.e, \textit{qr} > \textit{lu} > \textit{pinv} applies to \textit{2d\_linear\_loop.npz} as well
+  \item The impact of \textit{colamd} for \textit{2d\_linear\_loop.npz} is much more significant than in the case of \textit{2d\_linear.npz} dataset. This is probably due to $A$ matrix in the \textit{2d\_linear\_loop.npz} being denser than in \textit{2d\_linear.npz} leading to significant gains in performance.
+  \begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+      \includegraphics[width=\textwidth]{./results/linear/lu_2d_linear_sparsity.png}
+      \caption{\textit{2d\_linear.npz}}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+      \includegraphics[width=\textwidth]{./results/linear/lu_2d_linear_loop_sparsity.png}
+      \caption{\textit{2d\_linear\_loop.npz}}
+    \end{subfigure}
+    \caption{Sparsity matrices with \textit{lu} method}
+  \end{figure}
+  
+  \item The time for \textit{default} and \textit{qr\_colamd} methods are surprisingly close for both datasets which \textit{could} mean that \textit{spsolve} relies on QR factorization
+\end{enumerate}
 \section{Non-Linear SLAM}
 \subsection{Landmark}
 \subsubsection{Jacobian}
@@ -66,4 +199,23 @@ The Jacobian of measurement function is
   \frac{l_y - r_y}{(l_x - r_x)^2 + (l_y - r_y)^2} & \frac{-(l_x - r_x)}{(l_x - r_x)^2 + (l_y - r_y)^2} & \frac{-(l_y - r_y)}{(l_x - r_x)^2 + (l_y - r_y)^2} & \frac{l_x - r_x}{(l_x - r_x)^2 + (l_y - r_y)^2}\\
   \frac{-(l_x - r_x)}{\sqrt{(l_x - r_x)^2 + (l_y - r_y)^2}} & \frac{-(l_y - r_y)}{\sqrt{(l_x - r_x)^2 + (l_y - r_y)^2}} & \frac{l_x - r_x}{\sqrt{(l_x - r_x)^2 + (l_y - r_y)^2}} & \frac{l_y - r_y}{\sqrt{(l_x - r_x)^2 + (l_y - r_y)^2}}\\
 \end{bmatrix}\]
+
+\subsection{Results}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./results/nonlinear/lu_colamd_2d_nonlinear_map_before.png}
+  \caption{Results with \textit{lu\_colamd} optimizer before optimization}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./results/nonlinear/lu_colamd_2d_nonlinear_map_after.png}
+  \caption{Results with \textit{lu\_colamd} optimizer after optimization}
+\end{figure}
+\subsection{Comparison}
+There are two major differences between linear and non-linear optimization approaches
+\begin{enumerate}
+  \item Linear optimization involves optimization in one single step whereas non-linear optimization requires refinement of solution over several steps resulting in slower execution
+  \item In the case of linear optimization problem, the unknown variables that are estimated are the state variables (poses and landmark locations) whereas the unknowns estimated in non-linear optimization problems are the incremental change in the state variables. This requires us to estimate the Jacobian which is time-consuming compared to linear optimization approach.
+\end{enumerate}
+
 \end{document}
