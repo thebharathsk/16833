@@ -42,6 +42,74 @@ def solve_lu(A, b):
     
     return x, lu.U
 
+def solve_lu_custom_solver(A, b):
+    # TODO: return x, U s.t. Ax = b, and A = LU with LU decomposition.
+    # https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.splu.html
+    N = A.shape[1]
+    x = np.zeros((N, ))
+    U = eye(N)
+    
+    #perform LU factorization
+    lu = splu(A.T@A, permc_spec='NATURAL')
+        
+    #find number of rows
+    N = lu.L.A.shape[0]
+    
+    #store intermediate results
+    y = np.zeros(N)
+    
+    #store which variables are found
+    mask = np.zeros(N, 'int')
+    
+    #L and d in of Ly=d
+    L = lu.L.A
+    d = A.T@b
+    
+    #iterate to find all elements in y
+    for i in range(N):
+        #mask of non zero elements in L matrix
+        mask_L = L[i] != 0
+        
+        #idx of unknown element among mask_L
+        idx = int(np.where(np.logical_and(mask == 0, mask_L))[0])
+        
+        #mask of known elements
+        mask_known = mask != 0
+        
+        #find value of unknown element at idx
+        y[idx] = (d[idx] - np.dot(L[i][mask_known], y[mask_known]))/L[i][idx]
+        
+        #update mask
+        mask[idx] = 1
+
+    #store final results
+    x = np.zeros(N)
+    
+    #store which variables are found
+    mask = np.zeros(N, 'int')
+    
+    #U in Ux=y
+    U = lu.U.A
+    
+    #iterate to find all elements in x
+    for i in range(N-1, -1, -1):
+        #mask of non zero elements in U matrix
+        mask_U = U[i] != 0
+        
+        #idx of unknown element among mask_U
+        idx = int(np.where(np.logical_and(mask == 0, mask_U))[0])
+        
+        #mask of known elements
+        mask_known = mask != 0
+        
+        #find value of unknown element at idx
+        x[idx] = (y[idx] - np.dot(U[i][mask_known], x[mask_known]))/U[i][idx]
+        
+        #update mask
+        mask[idx] = 1
+            
+    return x, lu.U
+
 
 def solve_lu_colamd(A, b):
     # TODO: return x, U s.t. Ax = b, and Permutation_rows A Permutration_cols = LU with reordered LU decomposition.
@@ -106,6 +174,7 @@ def solve(A, b, method='default'):
         'default': solve_default,
         'pinv': solve_pinv,
         'lu': solve_lu,
+        'lu_custom': solve_lu_custom_solver,
         'qr': solve_qr,
         'lu_colamd': solve_lu_colamd,
         'qr_colamd': solve_qr_colamd,

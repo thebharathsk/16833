@@ -22,8 +22,9 @@
 \contentsline {subsubsection}{\numberline {1.4.6}\textit {qr\_colamd}}{9}{subsubsection.1.4.6}%
 \contentsline {subsubsection}{\numberline {1.4.7}Time}{9}{subsubsection.1.4.7}%
 \contentsline {subsubsection}{\numberline {1.4.8}Conclusions}{9}{subsubsection.1.4.8}%
-\contentsline {section}{\numberline {2}Non-Linear SLAM}{10}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Landmark}{10}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Jacobian}{10}{subsubsection.2.1.1}%
+\contentsline {subsection}{\numberline {1.5}[BONUS] Custom Implementation of Solver}{10}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Non-Linear SLAM}{11}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Landmark}{11}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Jacobian}{11}{subsubsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.2}Results}{11}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Comparison}{11}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.3}Comparison}{12}{subsection.2.3}%

@@ -192,6 +192,13 @@ The Jacobian of measurement function is
   
   \item The time for \textit{default} and \textit{qr\_colamd} methods are surprisingly close for both datasets which \textit{could} mean that \textit{spsolve} relies on QR factorization
 \end{enumerate}
+\subsection{[BONUS] Custom Implementation of Solver}
+The custom solver for LU factorization is implemented in the \textit{solve\_lu\_custom\_solver} function in \textit{solvers.py}. The function can be used with the \textit{--method lu\_custom} argument. The execution time on \textit{2d\_linear.npz} is 76 milliseconds which is significantly faster than the \textit{lu.solve} function. The map is shown below:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./results/linear/lu_custom_2d_linear_map.png}
+  \caption{Results with \textit{lu\_custom} optimizer}
+\end{figure}
 \section{Non-Linear SLAM}
 \subsection{Landmark}
 \subsubsection{Jacobian}
