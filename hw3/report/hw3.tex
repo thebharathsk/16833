@@ -60,12 +60,14 @@ The Jacobian of measurement function is
 \end{bmatrix}\]
 \subsection{Results for \textit{2d\_linear.npz}}
 \subsubsection{\textit{default}}
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{./results/linear/default_2d_linear_map.png}
   \caption{Results with \textit{default}}
 \end{figure}
 \subsubsection{\textit{pinv}}
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{./results/linear/pinv_2d_linear_map.png}
@@ -74,26 +76,58 @@ The Jacobian of measurement function is
 \subsubsection{\textit{lu}}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{./results/linear/lu_2d_linear_map.png}
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/linear/lu_2d_linear_map.png}
+    \caption{Map}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/linear/lu_2d_linear_sparsity.png}
+    \caption{Sparsity}
+  \end{subfigure}
   \caption{Results with \textit{lu}}
 \end{figure}
 \subsubsection{\textit{qr}}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{./results/linear/qr_2d_linear_map.png}
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/linear/qr_2d_linear_map.png}
+    \caption{Map}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/linear/qr_2d_linear_sparsity.png}
+    \caption{Sparsity}
+  \end{subfigure}
   \caption{Results with \textit{qr}}
 \end{figure}
 \subsubsection{\textit{lu\_colamd}}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{./results/linear/lu_colamd_2d_linear_map.png}
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/linear/lu_colamd_2d_linear_map.png}
+    \caption{Map}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/linear/lu_colamd_2d_linear_sparsity.png}
+    \caption{Sparsity}
+  \end{subfigure}
   \caption{Results with \textit{lu\_colamd}}
 \end{figure}
 \subsubsection{\textit{qr\_colamd}}
 \begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{./results/linear/qr_colamd_2d_linear_map.png}
-  \caption{Results with \textit{qr\_colamd}}
+\centering
+\begin{subfigure}[b]{0.45\textwidth}
+  \includegraphics[width=\textwidth]{./results/linear/qr_colamd_2d_linear_map.png}
+  \caption{Map}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.45\textwidth}
+  \includegraphics[width=\textwidth]{./results/linear/qr_colamd_2d_linear_sparsity.png}
+  \caption{Sparsity}
+\end{subfigure}
+\caption{Results with \textit{qr\_colamd}}
 \end{figure}
 \subsubsection{Time}
 \begin{table}[H]
@@ -115,7 +149,7 @@ The Jacobian of measurement function is
 \subsubsection{Conclusions}
 \begin{enumerate}
   \item The \textit{pinv} method is the slowest since it involves computation of matrix inverse
-  \item The \textit{qr} method is faster than \textit{lu} since QR factorization takes advantage of sparsity of $A$ matrix during factorization process
+  \item The \textit{qr} method is faster than \textit{lu} since QR factorization takes advantage of sparsity of input matrix during factorization process
 
 \end{enumerate}
 \subsection{Results for \textit{2d\_linear\_loop.npz}}
@@ -134,26 +168,58 @@ The Jacobian of measurement function is
 \subsubsection{\textit{lu}}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{./results/linear/lu_2d_linear_loop_map.png}
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/linear/lu_2d_linear_loop_map.png}
+    \caption{Map}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/linear/lu_2d_linear_loop_sparsity.png}
+    \caption{Sparsity}
+  \end{subfigure}
   \caption{Results with \textit{lu}}
 \end{figure}
 \subsubsection{\textit{qr}}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{./results/linear/qr_2d_linear_loop_map.png}
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/linear/qr_2d_linear_loop_map.png}
+    \caption{Map}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/linear/qr_2d_linear_loop_sparsity.png}
+    \caption{Sparsity}
+  \end{subfigure}
   \caption{Results with \textit{qr}}
 \end{figure}
 \subsubsection{\textit{lu\_colamd}}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{./results/linear/lu_colamd_2d_linear_loop_map.png}
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/linear/lu_colamd_2d_linear_loop_map.png}
+    \caption{Map}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/linear/lu_colamd_2d_linear_loop_sparsity.png}
+    \caption{Sparsity}
+  \end{subfigure}
   \caption{Results with \textit{lu\_colamd}}
 \end{figure}
 \subsubsection{\textit{qr\_colamd}}
 \begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{./results/linear/qr_colamd_2d_linear_loop_map.png}
-  \caption{Results with \textit{qr\_colamd}}
+\centering
+\begin{subfigure}[b]{0.45\textwidth}
+  \includegraphics[width=\textwidth]{./results/linear/qr_colamd_2d_linear_loop_map.png}
+  \caption{Map}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.45\textwidth}
+  \includegraphics[width=\textwidth]{./results/linear/qr_colamd_2d_linear_loop_sparsity.png}
+  \caption{Sparsity}
+\end{subfigure}
+\caption{Results with \textit{qr\_colamd}}
 \end{figure}
 \subsubsection{Time}
 \begin{table}[H]
@@ -196,9 +262,17 @@ The Jacobian of measurement function is
 The custom solver for LU factorization is implemented in the \textit{solve\_lu\_custom\_solver} function in \textit{solvers.py}. The function can be used with the \textit{--method lu\_custom} argument. The execution time on \textit{2d\_linear.npz} is 76 milliseconds which is significantly faster than the \textit{lu.solve} function. The map is shown below:
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{./results/linear/lu_custom_2d_linear_map.png}
-  \caption{Results with \textit{lu\_custom} optimizer}
-\end{figure}
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/linear/lu_custom_2d_linear_map.png}
+    \caption{Map}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/linear/lu_custom_2d_linear_sparsity.png}
+    \caption{Sparsity}
+  \end{subfigure}
+  \caption{Results with \textit{lu\_custom}}
+  \end{figure}
 \section{Non-Linear SLAM}
 \subsection{Landmark}
 \subsubsection{Jacobian}
