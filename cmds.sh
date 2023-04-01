@@ -1,0 +1,1 @@
+zip -vr submission.zip submission -x "*.DS Store"

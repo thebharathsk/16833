@@ -261,4 +261,4 @@ if __name__ == '__main__':
         file = os.path.join('./../../report/results/', \
                             args.method[0]+ '_'+\
                             os.path.basename(args.data).split('.npz')[0] + '_map.png')
-        plot_traj_and_landmarks(traj, landmarks, gt_traj, gt_landmarks, save_path=file)
+        plot_traj_and_landmarks(traj, landmarks, gt_traj, gt_landmarks, save_path=None)

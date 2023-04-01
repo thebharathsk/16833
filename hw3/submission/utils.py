@@ -40,5 +40,5 @@ def plot_traj_and_landmarks(traj, landmarks, gt_traj, gt_landmarks, save_path=No
     if save_path is not None:
         plt.savefig(save_path)
     
-    #plt.show()
+    plt.show()
     plt.close()

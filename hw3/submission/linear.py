@@ -94,7 +94,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--method',
         nargs='+',
-        choices=['default', 'pinv', 'qr', 'lu', 'qr_colamd', 'lu_colamd'],
+        choices=['default', 'pinv', 'qr', 'lu', 'qr_colamd', 'lu_colamd', 'lu_custom'],
         default=['default'],
         help='method')
     parser.add_argument(
@@ -154,7 +154,7 @@ if __name__ == '__main__':
             file = os.path.join('./../../report/results/', \
                                 args.method[0]+ '_'+\
                                 os.path.basename(args.data).split('.npz')[0] + '_sparsity.png')
-            plt.savefig(file)
+            #plt.savefig(file)
             plt.close()
 
         traj, landmarks = devectorize_state(x, n_poses)
@@ -164,4 +164,4 @@ if __name__ == '__main__':
         file = os.path.join('./../../report/results/', \
                             args.method[0]+ '_'+\
                             os.path.basename(args.data).split('.npz')[0] + '_map.png')
-        plot_traj_and_landmarks(traj, landmarks, gt_traj, gt_landmarks, save_path=file)
+        plot_traj_and_landmarks(traj, landmarks, gt_traj, gt_landmarks, save_path=None)
