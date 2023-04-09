@@ -7,6 +7,7 @@ import os
 import numpy as np
 import open3d as o3d
 import matplotlib.pyplot as plt
+from scipy.sparse.linalg import spsolve
 
 import argparse
 import transforms
@@ -34,30 +35,44 @@ def find_projective_correspondence(source_points,
     '''
     h, w, _ = target_vertex_map.shape
 
-    R = T_init[:3, :3]
-    t = T_init[:3, 3:]
+    R = T_init[:3, :3] #3x3
+    t = T_init[:3, 3:] #3x1
 
     # Transform source points from the source coordinate system to the target coordinate system
-    T_source_points = (R @ source_points.T + t).T
+    T_source_points = (R @ source_points.T + t).T #Nsx3
 
     # Set up initial correspondences from source to target
-    source_indices = np.arange(len(source_points)).astype(int)
+    source_indices = np.arange(len(source_points)).astype(int) #Ns
     target_us, target_vs, target_ds = transforms.project(
         T_source_points, intrinsic)
-    target_us = np.round(target_us).astype(int)
-    target_vs = np.round(target_vs).astype(int)
+    target_us = np.round(target_us).astype(int) #Ns
+    target_vs = np.round(target_vs).astype(int) #Ns
 
     # TODO: first filter: valid projection
-    mask = np.zeros_like(target_us).astype(bool)
+    #MY IMPLEMENTATION
+    mask = np.zeros_like(target_us).astype(bool) #Ns
+    
+    #ensure vertices lie within size of image
+    mask = np.logical_and(np.logical_and(target_us >= 0, target_vs >= 0),\
+                        np.logical_and(target_us < w, target_vs < h)) #N_valid
+    
+    #ensure positive depth
+    mask = np.logical_and(mask, target_ds > 0) #N_valid
     # End of TODO
 
-    source_indices = source_indices[mask]
-    target_us = target_us[mask]
-    target_vs = target_vs[mask]
-    T_source_points = T_source_points[mask]
+    source_indices = source_indices[mask] #N_valid
+    target_us = target_us[mask] #N_valid
+    target_vs = target_vs[mask] #N_valid
+    T_source_points = T_source_points[mask] #N_validx3
 
     # TODO: second filter: apply distance threshold
-    mask = np.zeros_like(target_us).astype(bool)
+    #MY IMPLEMENTATION
+    mask = np.zeros_like(target_us).astype(bool) #N_valid
+    
+    #corresponding target points
+    tgt_pts = target_vertex_map[target_vs, target_us,:] #N_validx3
+    
+    mask = np.linalg.norm(T_source_points - tgt_pts, axis=1) <= dist_diff #N_valid
     # End of TODO
 
     source_indices = source_indices[mask]
@@ -70,18 +85,52 @@ def find_projective_correspondence(source_points,
 def build_linear_system(source_points, target_points, target_normals, T):
     M = len(source_points)
     assert len(target_points) == M and len(target_normals) == M
-
+    
     R = T[:3, :3]
     t = T[:3, 3:]
 
-    p_prime = (R @ source_points.T + t).T
+    p_prime = (R @ source_points.T + t).T #
     q = target_points
     n_q = target_normals
 
+    #add additional dimension at the end
+    p_prime = p_prime[:,:,np.newaxis] #N_validx3x1
+    q = q[:,:,np.newaxis] #N_validx3x1
+    n_q = n_q[:,:,np.newaxis] #N_validx3x1
+    
     A = np.zeros((M, 6))
     b = np.zeros((M, ))
 
     # TODO: build the linear system
+    #MY IMPLEMENTATION
+    #transpose normals
+    n_q_T = np.swapaxes(n_q, -2, -1) #N_validx1x3
+    
+    #G
+    G = np.zeros((M, 3, 6))
+    
+    #skew symmetric
+    G[:,0,1] = -p_prime[:,2].flatten()
+    G[:,0,2] = p_prime[:,1].flatten()
+    G[:,1,0] = p_prime[:,2].flatten()
+    G[:,1,2] = -p_prime[:,0].flatten()
+    G[:,2,0] = -p_prime[:,1].flatten()
+    G[:,2,1] = p_prime[:,0].flatten()
+    
+    #identity
+    G[:,0,3] = 1
+    G[:,1,4] = 1
+    G[:,2,5] = 1
+    
+    #A
+    A = n_q_T@G #Nx1x6
+    
+    #b
+    b = n_q_T@(q - p_prime) #Nx1
+    
+    #reshape
+    A = A[:,0,:]
+    b = b.flatten()
     # End of TODO
 
     return A, b
@@ -129,7 +178,11 @@ def solve(A, b):
     \return delta (6, ) vector by solving the linear system. You may directly use dense solvers from numpy.
     '''
     # TODO: write your relevant solver
-    return np.zeros((6, ))
+    #MY IMPLEMENTATION
+    
+    x = spsolve(A.T @ A, A.T @ b)
+    
+    return x
 
 
 def icp(source_points,
@@ -159,9 +212,9 @@ def icp(source_points,
             target_normal_map, intrinsic, T)
 
         # Select associated source and target points
-        corres_source_points = source_points[source_indices]
-        corres_target_points = target_vertex_map[target_vs, target_us]
-        corres_target_normals = target_normal_map[target_vs, target_us]
+        corres_source_points = source_points[source_indices] #N_validx3
+        corres_target_points = target_vertex_map[target_vs, target_us] #N_validx3
+        corres_target_normals = target_normal_map[target_vs, target_us] #N_validx3
 
         # Debug, if necessary
         if debug_association:
