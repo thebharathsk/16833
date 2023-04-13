@@ -35,7 +35,25 @@ class Map:
         \param t translation from camera (input) to world (map), (3, )
         \return None, update map properties IN PLACE
         '''
-        pass
+        #MY IMPLEMENTATION
+        #transform points and normsls
+        points = (R@points.T + t).T
+        normals = (R@normals.T).T
+        
+        #update points
+        self.points[indices] = (self.weights[indices]*self.points[indices] + points)/(self.weights[indices] + 1)
+        
+        #update normals
+        self.normals[indices] = (self.weights[indices]*self.normals[indices] + normals)/(self.weights[indices] + 1)
+        
+        #normalize normals(no pun intended)
+        self.normals[indices] = self.normals[indices]/np.linalg.norm(self.normals[indices], axis=1)[:,np.newaxis]
+        
+        #update colors
+        self.colors[indices] = (self.weights[indices]*self.colors[indices] + colors)/(self.weights[indices] + 1)
+        
+        #update weights
+        self.weights[indices] +=1
 
     def add(self, points, normals, colors, R, t):
         '''
@@ -48,7 +66,16 @@ class Map:
         \param t translation from camera (input) to world (map), (3, )
         \return None, update map properties by concatenation
         '''
-        pass
+        #MY IMPLEMENTATION
+        #transform points and normsls
+        points = (R@points.T + t).T
+        normals = (R@normals.T).T
+        
+        #add points, normals, colors and weights
+        self.points = np.concatenate((self.points, points), axis=0)
+        self.normals = np.concatenate((self.normals, normals), axis=0)
+        self.colors = np.concatenate((self.colors, colors), axis=0)
+        self.weights = np.concatenate((self.weights, np.ones((points.shape[0], 1))), axis=0)
 
     def filter_pass1(self, us, vs, ds, h, w):
         '''
@@ -61,7 +88,19 @@ class Map:
         \param w Width of the image projected to
         \return mask (N, 1) in bool indicating the valid coordinates
         '''
-        return np.zeros_like(us)
+        #MY IMPLEMENTATION
+        #initialize mask
+        mask = np.zeros_like(us).astype(bool)
+        
+        #apply mask
+        #ensure vertices lie within size of image
+        mask = np.logical_and(np.logical_and(us >= 0, vs >= 0),\
+                            np.logical_and(us <= w-1, vs <= h-1)) #N_valid
+    
+        #ensure positive depth
+        mask = np.logical_and(mask, ds > 0) #N_valid
+        
+        return mask
 
     def filter_pass2(self, points, normals, input_points, input_normals,
                      dist_diff, angle_diff):
@@ -76,7 +115,27 @@ class Map:
         \param angle_diff Angle difference threshold to filter correspondences by normals
         \return mask (N, 1) in bool indicating the valid correspondences
         '''
-        return np.zeros((len(points)))
+        #MY IMPLEMENTATION        
+        #DISTANCE THRESHOLD
+        mask_dist = np.linalg.norm(points - input_points, axis=1) <= dist_diff
+        
+        #NORMAL THRESHOLD
+        #change shape of normals
+        normals_ = normals[:,np.newaxis,:]
+        input_normals_ = input_normals[:,:,np.newaxis]
+        
+        #compute similarity between normals
+        similarities = ((normals_@input_normals_).flatten())/(np.linalg.norm(normals, axis=1)*np.linalg.norm(input_normals, axis=1))
+        
+        #compute cos^-1(sim)
+        angles = np.arccos(similarities)
+        
+        #apply threshold
+        mask_normal = angles  <= angle_diff
+        
+        #merge masks
+        mask = np.logical_and(mask_dist, mask_normal)
+        return mask
 
     def fuse(self,
              vertex_map,
@@ -104,6 +163,7 @@ class Map:
         t_inv = T_inv[:3, 3:]
 
         if not self.initialized:
+            
             points = vertex_map.reshape((-1, 3))
             normals = normal_map.reshape((-1, 3))
             colors = color_map.reshape((-1, 3))
@@ -127,23 +187,25 @@ class Map:
 
             # TODO: first filter: valid projection
             mask = self.filter_pass1(us, vs, ds, h, w)
+            
             # Should not happen -- placeholder before implementation
             if mask.sum() == 0:
                 return
             # End of TODO
-
+            
             indices = indices[mask]
             us = us[mask]
             vs = vs[mask]
-
+            
             T_points = T_points[indices]
             R_normals = R_normals[indices]
             valid_points = vertex_map[vs, us]
             valid_normals = normal_map[vs, us]
-
+            
             # TODO: second filter: apply thresholds
             mask = self.filter_pass2(T_points, R_normals, valid_points,
                                      valid_normals, dist_diff, angle_diff)
+            
             # Should not happen -- placeholder before implementation
             if mask.sum() == 0:
                 return

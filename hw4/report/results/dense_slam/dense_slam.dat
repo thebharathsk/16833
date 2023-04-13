@@ -1,0 +1,1010 @@
+Point-based fusion
+updated: 122574, added: 4920, total: 419893
+loading frame 129
+Frame-to-model icp
+iter 0: avg loss = 2.8353e-04, inlier count = 123455
+iter 1: avg loss = 1.7741e-04, inlier count = 121693
+iter 2: avg loss = 1.7229e-04, inlier count = 120829
+iter 3: avg loss = 1.7201e-04, inlier count = 120567
+iter 4: avg loss = 1.7188e-04, inlier count = 120479
+iter 5: avg loss = 1.7182e-04, inlier count = 120457
+iter 6: avg loss = 1.7193e-04, inlier count = 120452
+iter 7: avg loss = 1.7196e-04, inlier count = 120450
+iter 8: avg loss = 1.7193e-04, inlier count = 120449
+iter 9: avg loss = 1.7193e-04, inlier count = 120449
+Point-based fusion
+updated: 121032, added: 5602, total: 425495
+loading frame 130
+Frame-to-model icp
+iter 0: avg loss = 2.7632e-04, inlier count = 123458
+iter 1: avg loss = 1.8118e-04, inlier count = 122851
+iter 2: avg loss = 1.7592e-04, inlier count = 121986
+iter 3: avg loss = 1.7552e-04, inlier count = 121667
+iter 4: avg loss = 1.7527e-04, inlier count = 121536
+iter 5: avg loss = 1.7512e-04, inlier count = 121487
+iter 6: avg loss = 1.7504e-04, inlier count = 121473
+iter 7: avg loss = 1.7506e-04, inlier count = 121468
+iter 8: avg loss = 1.7506e-04, inlier count = 121469
+iter 9: avg loss = 1.7506e-04, inlier count = 121469
+Point-based fusion
+updated: 121522, added: 5617, total: 431112
+loading frame 131
+Frame-to-model icp
+iter 0: avg loss = 3.1168e-04, inlier count = 124242
+iter 1: avg loss = 1.8340e-04, inlier count = 124327
+iter 2: avg loss = 1.7666e-04, inlier count = 123579
+iter 3: avg loss = 1.7511e-04, inlier count = 123234
+iter 4: avg loss = 1.7506e-04, inlier count = 123117
+iter 5: avg loss = 1.7511e-04, inlier count = 123087
+iter 6: avg loss = 1.7507e-04, inlier count = 123080
+iter 7: avg loss = 1.7502e-04, inlier count = 123076
+iter 8: avg loss = 1.7502e-04, inlier count = 123074
+iter 9: avg loss = 1.7502e-04, inlier count = 123072
+Point-based fusion
+updated: 122784, added: 5080, total: 436192
+loading frame 132
+Frame-to-model icp
+iter 0: avg loss = 3.4071e-04, inlier count = 124655
+iter 1: avg loss = 1.9895e-04, inlier count = 124528
+iter 2: avg loss = 1.8680e-04, inlier count = 123136
+iter 3: avg loss = 1.8639e-04, inlier count = 122640
+iter 4: avg loss = 1.8676e-04, inlier count = 122486
+iter 5: avg loss = 1.8670e-04, inlier count = 122424
+iter 6: avg loss = 1.8685e-04, inlier count = 122409
+iter 7: avg loss = 1.8683e-04, inlier count = 122402
+iter 8: avg loss = 1.8683e-04, inlier count = 122403
+iter 9: avg loss = 1.8686e-04, inlier count = 122403
+Point-based fusion
+updated: 120004, added: 6337, total: 442529
+loading frame 133
+Frame-to-model icp
+iter 0: avg loss = 3.7164e-04, inlier count = 122618
+iter 1: avg loss = 2.2254e-04, inlier count = 125122
+iter 2: avg loss = 2.0060e-04, inlier count = 123371
+iter 3: avg loss = 1.9856e-04, inlier count = 122773
+iter 4: avg loss = 1.9807e-04, inlier count = 122590
+iter 5: avg loss = 1.9805e-04, inlier count = 122549
+iter 6: avg loss = 1.9803e-04, inlier count = 122536
+iter 7: avg loss = 1.9804e-04, inlier count = 122530
+iter 8: avg loss = 1.9804e-04, inlier count = 122529
+iter 9: avg loss = 1.9805e-04, inlier count = 122529
+Point-based fusion
+updated: 118730, added: 6534, total: 449063
+loading frame 134
+Frame-to-model icp
+iter 0: avg loss = 3.5500e-04, inlier count = 123798
+iter 1: avg loss = 2.1727e-04, inlier count = 125553
+iter 2: avg loss = 2.0535e-04, inlier count = 124611
+iter 3: avg loss = 2.0414e-04, inlier count = 124248
+iter 4: avg loss = 2.0373e-04, inlier count = 124125
+iter 5: avg loss = 2.0362e-04, inlier count = 124081
+iter 6: avg loss = 2.0356e-04, inlier count = 124072
+iter 7: avg loss = 2.0356e-04, inlier count = 124069
+iter 8: avg loss = 2.0357e-04, inlier count = 124069
+iter 9: avg loss = 2.0357e-04, inlier count = 124068
+Point-based fusion
+updated: 119584, added: 5699, total: 454762
+loading frame 135
+Frame-to-model icp
+iter 0: avg loss = 3.2555e-04, inlier count = 125367
+iter 1: avg loss = 2.2165e-04, inlier count = 126048
+iter 2: avg loss = 2.1136e-04, inlier count = 125154
+iter 3: avg loss = 2.1038e-04, inlier count = 124890
+iter 4: avg loss = 2.1003e-04, inlier count = 124810
+iter 5: avg loss = 2.1017e-04, inlier count = 124801
+iter 6: avg loss = 2.1006e-04, inlier count = 124791
+iter 7: avg loss = 2.1007e-04, inlier count = 124791
+iter 8: avg loss = 2.1006e-04, inlier count = 124791
+iter 9: avg loss = 2.1006e-04, inlier count = 124791
+Point-based fusion
+updated: 119564, added: 5709, total: 460471
+loading frame 136
+Frame-to-model icp
+iter 0: avg loss = 2.8195e-04, inlier count = 127469
+iter 1: avg loss = 2.1804e-04, inlier count = 126851
+iter 2: avg loss = 2.1380e-04, inlier count = 126245
+iter 3: avg loss = 2.1342e-04, inlier count = 126086
+iter 4: avg loss = 2.1334e-04, inlier count = 126029
+iter 5: avg loss = 2.1331e-04, inlier count = 126014
+iter 6: avg loss = 2.1331e-04, inlier count = 126012
+iter 7: avg loss = 2.1330e-04, inlier count = 126012
+iter 8: avg loss = 2.1330e-04, inlier count = 126012
+iter 9: avg loss = 2.1330e-04, inlier count = 126012
+Point-based fusion
+updated: 120528, added: 5171, total: 465642
+loading frame 137
+Frame-to-model icp
+iter 0: avg loss = 3.3389e-04, inlier count = 126593
+iter 1: avg loss = 2.2811e-04, inlier count = 127798
+iter 2: avg loss = 2.1858e-04, inlier count = 127077
+iter 3: avg loss = 2.1763e-04, inlier count = 126864
+iter 4: avg loss = 2.1765e-04, inlier count = 126817
+iter 5: avg loss = 2.1770e-04, inlier count = 126805
+iter 6: avg loss = 2.1766e-04, inlier count = 126795
+iter 7: avg loss = 2.1771e-04, inlier count = 126797
+iter 8: avg loss = 2.1774e-04, inlier count = 126798
+iter 9: avg loss = 2.1774e-04, inlier count = 126798
+Point-based fusion
+updated: 121176, added: 4807, total: 470449
+loading frame 138
+Frame-to-model icp
+iter 0: avg loss = 3.7533e-04, inlier count = 125533
+iter 1: avg loss = 2.3735e-04, inlier count = 128124
+iter 2: avg loss = 2.2434e-04, inlier count = 127323
+iter 3: avg loss = 2.2335e-04, inlier count = 127125
+iter 4: avg loss = 2.2337e-04, inlier count = 127065
+iter 5: avg loss = 2.2352e-04, inlier count = 127058
+iter 6: avg loss = 2.2357e-04, inlier count = 127054
+iter 7: avg loss = 2.2357e-04, inlier count = 127054
+iter 8: avg loss = 2.2357e-04, inlier count = 127055
+iter 9: avg loss = 2.2357e-04, inlier count = 127054
+Point-based fusion
+updated: 119790, added: 5769, total: 476218
+loading frame 139
+Frame-to-model icp
+iter 0: avg loss = 4.3609e-04, inlier count = 120620
+iter 1: avg loss = 2.5525e-04, inlier count = 128471
+iter 2: avg loss = 2.3429e-04, inlier count = 127453
+iter 3: avg loss = 2.3285e-04, inlier count = 127173
+iter 4: avg loss = 2.3251e-04, inlier count = 127059
+iter 5: avg loss = 2.3262e-04, inlier count = 127023
+iter 6: avg loss = 2.3265e-04, inlier count = 127016
+iter 7: avg loss = 2.3263e-04, inlier count = 127013
+iter 8: avg loss = 2.3264e-04, inlier count = 127011
+iter 9: avg loss = 2.3263e-04, inlier count = 127010
+Point-based fusion
+updated: 118152, added: 6378, total: 482596
+loading frame 140
+Frame-to-model icp
+iter 0: avg loss = 4.2155e-04, inlier count = 124062
+iter 1: avg loss = 2.5340e-04, inlier count = 128931
+iter 2: avg loss = 2.3800e-04, inlier count = 127984
+iter 3: avg loss = 2.3678e-04, inlier count = 127661
+iter 4: avg loss = 2.3643e-04, inlier count = 127578
+iter 5: avg loss = 2.3632e-04, inlier count = 127551
+iter 6: avg loss = 2.3627e-04, inlier count = 127542
+iter 7: avg loss = 2.3625e-04, inlier count = 127541
+iter 8: avg loss = 2.3624e-04, inlier count = 127539
+iter 9: avg loss = 2.3624e-04, inlier count = 127539
+Point-based fusion
+updated: 118466, added: 6085, total: 488681
+loading frame 141
+Frame-to-model icp
+iter 0: avg loss = 3.8824e-04, inlier count = 126054
+iter 1: avg loss = 2.6246e-04, inlier count = 128658
+iter 2: avg loss = 2.4344e-04, inlier count = 127689
+iter 3: avg loss = 2.4129e-04, inlier count = 127350
+iter 4: avg loss = 2.4089e-04, inlier count = 127243
+iter 5: avg loss = 2.4085e-04, inlier count = 127225
+iter 6: avg loss = 2.4087e-04, inlier count = 127221
+iter 7: avg loss = 2.4084e-04, inlier count = 127218
+iter 8: avg loss = 2.4081e-04, inlier count = 127218
+iter 9: avg loss = 2.4082e-04, inlier count = 127217
+Point-based fusion
+updated: 116716, added: 7053, total: 495734
+loading frame 142
+Frame-to-model icp
+iter 0: avg loss = 3.7169e-04, inlier count = 126694
+iter 1: avg loss = 2.5768e-04, inlier count = 129533
+iter 2: avg loss = 2.4435e-04, inlier count = 128657
+iter 3: avg loss = 2.4328e-04, inlier count = 128432
+iter 4: avg loss = 2.4315e-04, inlier count = 128374
+iter 5: avg loss = 2.4318e-04, inlier count = 128359
+iter 6: avg loss = 2.4318e-04, inlier count = 128357
+iter 7: avg loss = 2.4317e-04, inlier count = 128354
+iter 8: avg loss = 2.4317e-04, inlier count = 128352
+iter 9: avg loss = 2.4317e-04, inlier count = 128353
+Point-based fusion
+updated: 118587, added: 5699, total: 501433
+loading frame 143
+Frame-to-model icp
+iter 0: avg loss = 3.3614e-04, inlier count = 129200
+iter 1: avg loss = 2.5744e-04, inlier count = 130233
+iter 2: avg loss = 2.4723e-04, inlier count = 129490
+iter 3: avg loss = 2.4622e-04, inlier count = 129270
+iter 4: avg loss = 2.4614e-04, inlier count = 129201
+iter 5: avg loss = 2.4616e-04, inlier count = 129194
+iter 6: avg loss = 2.4617e-04, inlier count = 129191
+iter 7: avg loss = 2.4617e-04, inlier count = 129187
+iter 8: avg loss = 2.4617e-04, inlier count = 129187
+iter 9: avg loss = 2.4617e-04, inlier count = 129187
+Point-based fusion
+updated: 119145, added: 5487, total: 506920
+loading frame 144
+Frame-to-model icp
+iter 0: avg loss = 3.2549e-04, inlier count = 130009
+iter 1: avg loss = 2.5679e-04, inlier count = 131287
+iter 2: avg loss = 2.4901e-04, inlier count = 130583
+iter 3: avg loss = 2.4851e-04, inlier count = 130384
+iter 4: avg loss = 2.4850e-04, inlier count = 130335
+iter 5: avg loss = 2.4840e-04, inlier count = 130319
+iter 6: avg loss = 2.4843e-04, inlier count = 130322
+iter 7: avg loss = 2.4843e-04, inlier count = 130322
+iter 8: avg loss = 2.4843e-04, inlier count = 130323
+iter 9: avg loss = 2.4843e-04, inlier count = 130323
+Point-based fusion
+updated: 118508, added: 5680, total: 512600
+loading frame 145
+Frame-to-model icp
+iter 0: avg loss = 3.2985e-04, inlier count = 131344
+iter 1: avg loss = 2.6295e-04, inlier count = 132119
+iter 2: avg loss = 2.5205e-04, inlier count = 131298
+iter 3: avg loss = 2.5140e-04, inlier count = 131041
+iter 4: avg loss = 2.5141e-04, inlier count = 131016
+iter 5: avg loss = 2.5152e-04, inlier count = 131013
+iter 6: avg loss = 2.5150e-04, inlier count = 131010
+iter 7: avg loss = 2.5150e-04, inlier count = 131012
+iter 8: avg loss = 2.5149e-04, inlier count = 131011
+iter 9: avg loss = 2.5149e-04, inlier count = 131011
+Point-based fusion
+updated: 118554, added: 5865, total: 518465
+loading frame 146
+Frame-to-model icp
+iter 0: avg loss = 3.8351e-04, inlier count = 129872
+iter 1: avg loss = 2.9030e-04, inlier count = 132201
+iter 2: avg loss = 2.6593e-04, inlier count = 131224
+iter 3: avg loss = 2.6320e-04, inlier count = 130791
+iter 4: avg loss = 2.6311e-04, inlier count = 130716
+iter 5: avg loss = 2.6303e-04, inlier count = 130697
+iter 6: avg loss = 2.6305e-04, inlier count = 130694
+iter 7: avg loss = 2.6300e-04, inlier count = 130693
+iter 8: avg loss = 2.6299e-04, inlier count = 130693
+iter 9: avg loss = 2.6300e-04, inlier count = 130692
+Point-based fusion
+updated: 115389, added: 7412, total: 525877
+loading frame 147
+Frame-to-model icp
+iter 0: avg loss = 3.6555e-04, inlier count = 132856
+iter 1: avg loss = 2.7312e-04, inlier count = 133451
+iter 2: avg loss = 2.6532e-04, inlier count = 132811
+iter 3: avg loss = 2.6463e-04, inlier count = 132617
+iter 4: avg loss = 2.6443e-04, inlier count = 132582
+iter 5: avg loss = 2.6442e-04, inlier count = 132573
+iter 6: avg loss = 2.6443e-04, inlier count = 132571
+iter 7: avg loss = 2.6442e-04, inlier count = 132573
+iter 8: avg loss = 2.6442e-04, inlier count = 132573
+iter 9: avg loss = 2.6443e-04, inlier count = 132572
+Point-based fusion
+updated: 116685, added: 6388, total: 532265
+loading frame 148
+Frame-to-model icp
+iter 0: avg loss = 3.5774e-04, inlier count = 133824
+iter 1: avg loss = 2.8010e-04, inlier count = 134338
+iter 2: avg loss = 2.6650e-04, inlier count = 133292
+iter 3: avg loss = 2.6494e-04, inlier count = 132937
+iter 4: avg loss = 2.6464e-04, inlier count = 132850
+iter 5: avg loss = 2.6453e-04, inlier count = 132827
+iter 6: avg loss = 2.6451e-04, inlier count = 132824
+iter 7: avg loss = 2.6451e-04, inlier count = 132823
+iter 8: avg loss = 2.6451e-04, inlier count = 132823
+iter 9: avg loss = 2.6451e-04, inlier count = 132823
+Point-based fusion
+updated: 115636, added: 6914, total: 539179
+loading frame 149
+Frame-to-model icp
+iter 0: avg loss = 3.2829e-04, inlier count = 135616
+iter 1: avg loss = 2.7228e-04, inlier count = 134965
+iter 2: avg loss = 2.6282e-04, inlier count = 134158
+iter 3: avg loss = 2.6145e-04, inlier count = 133886
+iter 4: avg loss = 2.6121e-04, inlier count = 133793
+iter 5: avg loss = 2.6113e-04, inlier count = 133774
+iter 6: avg loss = 2.6110e-04, inlier count = 133776
+iter 7: avg loss = 2.6113e-04, inlier count = 133777
+iter 8: avg loss = 2.6113e-04, inlier count = 133777
+iter 9: avg loss = 2.6113e-04, inlier count = 133777
+Point-based fusion
+updated: 114757, added: 7399, total: 546578
+loading frame 150
+Frame-to-model icp
+iter 0: avg loss = 3.2439e-04, inlier count = 136631
+iter 1: avg loss = 2.6563e-04, inlier count = 135640
+iter 2: avg loss = 2.5743e-04, inlier count = 134677
+iter 3: avg loss = 2.5586e-04, inlier count = 134409
+iter 4: avg loss = 2.5565e-04, inlier count = 134349
+iter 5: avg loss = 2.5564e-04, inlier count = 134347
+iter 6: avg loss = 2.5563e-04, inlier count = 134343
+iter 7: avg loss = 2.5562e-04, inlier count = 134342
+iter 8: avg loss = 2.5564e-04, inlier count = 134343
+iter 9: avg loss = 2.5565e-04, inlier count = 134344
+Point-based fusion
+updated: 107641, added: 11318, total: 557896
+loading frame 151
+Frame-to-model icp
+iter 0: avg loss = 3.2368e-04, inlier count = 139344
+iter 1: avg loss = 2.5985e-04, inlier count = 138206
+iter 2: avg loss = 2.4820e-04, inlier count = 137097
+iter 3: avg loss = 2.4643e-04, inlier count = 136763
+iter 4: avg loss = 2.4626e-04, inlier count = 136688
+iter 5: avg loss = 2.4616e-04, inlier count = 136669
+iter 6: avg loss = 2.4619e-04, inlier count = 136668
+iter 7: avg loss = 2.4616e-04, inlier count = 136664
+iter 8: avg loss = 2.4615e-04, inlier count = 136664
+iter 9: avg loss = 2.4615e-04, inlier count = 136664
+Point-based fusion
+updated: 95245, added: 16695, total: 574591
+loading frame 152
+Frame-to-model icp
+iter 0: avg loss = 3.1185e-04, inlier count = 144052
+iter 1: avg loss = 2.4436e-04, inlier count = 143178
+iter 2: avg loss = 2.3457e-04, inlier count = 142142
+iter 3: avg loss = 2.3442e-04, inlier count = 141839
+iter 4: avg loss = 2.3444e-04, inlier count = 141778
+iter 5: avg loss = 2.3442e-04, inlier count = 141769
+iter 6: avg loss = 2.3435e-04, inlier count = 141761
+iter 7: avg loss = 2.3435e-04, inlier count = 141761
+iter 8: avg loss = 2.3435e-04, inlier count = 141761
+iter 9: avg loss = 2.3435e-04, inlier count = 141761
+Point-based fusion
+updated: 100669, added: 10103, total: 584694
+loading frame 153
+Frame-to-model icp
+iter 0: avg loss = 3.1301e-04, inlier count = 144841
+iter 1: avg loss = 2.3823e-04, inlier count = 144629
+iter 2: avg loss = 2.2846e-04, inlier count = 143574
+iter 3: avg loss = 2.2712e-04, inlier count = 143249
+iter 4: avg loss = 2.2708e-04, inlier count = 143194
+iter 5: avg loss = 2.2706e-04, inlier count = 143169
+iter 6: avg loss = 2.2708e-04, inlier count = 143168
+iter 7: avg loss = 2.2707e-04, inlier count = 143167
+iter 8: avg loss = 2.2705e-04, inlier count = 143165
+iter 9: avg loss = 2.2705e-04, inlier count = 143165
+Point-based fusion
+updated: 104564, added: 7683, total: 592377
+loading frame 154
+Frame-to-model icp
+iter 0: avg loss = 3.2709e-04, inlier count = 142737
+iter 1: avg loss = 2.3203e-04, inlier count = 145255
+iter 2: avg loss = 2.2323e-04, inlier count = 144335
+iter 3: avg loss = 2.2180e-04, inlier count = 144041
+iter 4: avg loss = 2.2181e-04, inlier count = 143987
+iter 5: avg loss = 2.2178e-04, inlier count = 143975
+iter 6: avg loss = 2.2179e-04, inlier count = 143970
+iter 7: avg loss = 2.2177e-04, inlier count = 143969
+iter 8: avg loss = 2.2176e-04, inlier count = 143969
+iter 9: avg loss = 2.2176e-04, inlier count = 143969
+Point-based fusion
+updated: 108319, added: 5473, total: 597850
+loading frame 155
+Frame-to-model icp
+iter 0: avg loss = 3.4406e-04, inlier count = 140529
+iter 1: avg loss = 2.3584e-04, inlier count = 144543
+iter 2: avg loss = 2.2243e-04, inlier count = 143356
+iter 3: avg loss = 2.2041e-04, inlier count = 142994
+iter 4: avg loss = 2.2027e-04, inlier count = 142906
+iter 5: avg loss = 2.2031e-04, inlier count = 142896
+iter 6: avg loss = 2.2028e-04, inlier count = 142890
+iter 7: avg loss = 2.2028e-04, inlier count = 142889
+iter 8: avg loss = 2.2020e-04, inlier count = 142886
+iter 9: avg loss = 2.2021e-04, inlier count = 142887
+Point-based fusion
+updated: 108914, added: 5820, total: 603670
+loading frame 156
+Frame-to-model icp
+iter 0: avg loss = 3.4508e-04, inlier count = 142312
+iter 1: avg loss = 2.3827e-04, inlier count = 144045
+iter 2: avg loss = 2.2191e-04, inlier count = 142873
+iter 3: avg loss = 2.2093e-04, inlier count = 142528
+iter 4: avg loss = 2.2038e-04, inlier count = 142437
+iter 5: avg loss = 2.2038e-04, inlier count = 142420
+iter 6: avg loss = 2.2046e-04, inlier count = 142414
+iter 7: avg loss = 2.2046e-04, inlier count = 142413
+iter 8: avg loss = 2.2046e-04, inlier count = 142413
+iter 9: avg loss = 2.2046e-04, inlier count = 142413
+Point-based fusion
+updated: 109275, added: 5620, total: 609290
+loading frame 157
+Frame-to-model icp
+iter 0: avg loss = 3.2574e-04, inlier count = 143040
+iter 1: avg loss = 2.3758e-04, inlier count = 143209
+iter 2: avg loss = 2.2369e-04, inlier count = 142052
+iter 3: avg loss = 2.2272e-04, inlier count = 141727
+iter 4: avg loss = 2.2210e-04, inlier count = 141632
+iter 5: avg loss = 2.2217e-04, inlier count = 141606
+iter 6: avg loss = 2.2226e-04, inlier count = 141606
+iter 7: avg loss = 2.2223e-04, inlier count = 141604
+iter 8: avg loss = 2.2221e-04, inlier count = 141602
+iter 9: avg loss = 2.2221e-04, inlier count = 141601
+Point-based fusion
+updated: 110519, added: 5289, total: 614579
+loading frame 158
+Frame-to-model icp
+iter 0: avg loss = 3.3421e-04, inlier count = 142652
+iter 1: avg loss = 2.3710e-04, inlier count = 142985
+iter 2: avg loss = 2.2583e-04, inlier count = 141925
+iter 3: avg loss = 2.2422e-04, inlier count = 141644
+iter 4: avg loss = 2.2407e-04, inlier count = 141557
+iter 5: avg loss = 2.2397e-04, inlier count = 141534
+iter 6: avg loss = 2.2406e-04, inlier count = 141526
+iter 7: avg loss = 2.2407e-04, inlier count = 141526
+iter 8: avg loss = 2.2407e-04, inlier count = 141526
+iter 9: avg loss = 2.2407e-04, inlier count = 141526
+Point-based fusion
+updated: 111329, added: 5190, total: 619769
+loading frame 159
+Frame-to-model icp
+iter 0: avg loss = 3.4612e-04, inlier count = 141985
+iter 1: avg loss = 2.4582e-04, inlier count = 142374
+iter 2: avg loss = 2.3235e-04, inlier count = 141508
+iter 3: avg loss = 2.3036e-04, inlier count = 141146
+iter 4: avg loss = 2.3046e-04, inlier count = 141089
+iter 5: avg loss = 2.3002e-04, inlier count = 141054
+iter 6: avg loss = 2.3008e-04, inlier count = 141049
+iter 7: avg loss = 2.3010e-04, inlier count = 141051
+iter 8: avg loss = 2.3006e-04, inlier count = 141049
+iter 9: avg loss = 2.3005e-04, inlier count = 141049
+Point-based fusion
+updated: 111373, added: 5533, total: 625302
+loading frame 160
+Frame-to-model icp
+iter 0: avg loss = 3.5405e-04, inlier count = 142084
+iter 1: avg loss = 2.4951e-04, inlier count = 142303
+iter 2: avg loss = 2.3538e-04, inlier count = 141532
+iter 3: avg loss = 2.3288e-04, inlier count = 141159
+iter 4: avg loss = 2.3258e-04, inlier count = 141058
+iter 5: avg loss = 2.3245e-04, inlier count = 141028
+iter 6: avg loss = 2.3244e-04, inlier count = 141020
+iter 7: avg loss = 2.3248e-04, inlier count = 141022
+iter 8: avg loss = 2.3248e-04, inlier count = 141021
+iter 9: avg loss = 2.3248e-04, inlier count = 141021
+Point-based fusion
+updated: 112454, added: 5389, total: 630691
+loading frame 161
+Frame-to-model icp
+iter 0: avg loss = 3.7300e-04, inlier count = 141734
+iter 1: avg loss = 2.5763e-04, inlier count = 142043
+iter 2: avg loss = 2.4117e-04, inlier count = 141190
+iter 3: avg loss = 2.3680e-04, inlier count = 140814
+iter 4: avg loss = 2.3613e-04, inlier count = 140727
+iter 5: avg loss = 2.3574e-04, inlier count = 140680
+iter 6: avg loss = 2.3574e-04, inlier count = 140679
+iter 7: avg loss = 2.3576e-04, inlier count = 140682
+iter 8: avg loss = 2.3575e-04, inlier count = 140682
+iter 9: avg loss = 2.3574e-04, inlier count = 140681
+Point-based fusion
+updated: 112465, added: 5497, total: 636188
+loading frame 162
+Frame-to-model icp
+iter 0: avg loss = 3.7997e-04, inlier count = 141326
+iter 1: avg loss = 2.6168e-04, inlier count = 141721
+iter 2: avg loss = 2.4198e-04, inlier count = 140700
+iter 3: avg loss = 2.3913e-04, inlier count = 140430
+iter 4: avg loss = 2.3878e-04, inlier count = 140382
+iter 5: avg loss = 2.3880e-04, inlier count = 140375
+iter 6: avg loss = 2.3885e-04, inlier count = 140375
+iter 7: avg loss = 2.3887e-04, inlier count = 140376
+iter 8: avg loss = 2.3887e-04, inlier count = 140376
+iter 9: avg loss = 2.3887e-04, inlier count = 140376
+Point-based fusion
+updated: 112796, added: 5745, total: 641933
+loading frame 163
+Frame-to-model icp
+iter 0: avg loss = 3.5337e-04, inlier count = 142343
+iter 1: avg loss = 2.5814e-04, inlier count = 141564
+iter 2: avg loss = 2.4359e-04, inlier count = 140780
+iter 3: avg loss = 2.4198e-04, inlier count = 140516
+iter 4: avg loss = 2.4157e-04, inlier count = 140432
+iter 5: avg loss = 2.4163e-04, inlier count = 140421
+iter 6: avg loss = 2.4163e-04, inlier count = 140413
+iter 7: avg loss = 2.4159e-04, inlier count = 140410
+iter 8: avg loss = 2.4160e-04, inlier count = 140412
+iter 9: avg loss = 2.4161e-04, inlier count = 140413
+Point-based fusion
+updated: 114164, added: 5095, total: 647028
+loading frame 164
+Frame-to-model icp
+iter 0: avg loss = 3.4774e-04, inlier count = 141737
+iter 1: avg loss = 2.6091e-04, inlier count = 141015
+iter 2: avg loss = 2.4793e-04, inlier count = 140336
+iter 3: avg loss = 2.4548e-04, inlier count = 140062
+iter 4: avg loss = 2.4475e-04, inlier count = 140020
+iter 5: avg loss = 2.4476e-04, inlier count = 140014
+iter 6: avg loss = 2.4473e-04, inlier count = 140006
+iter 7: avg loss = 2.4470e-04, inlier count = 140002
+iter 8: avg loss = 2.4470e-04, inlier count = 140004
+iter 9: avg loss = 2.4470e-04, inlier count = 140004
+Point-based fusion
+updated: 113999, added: 5876, total: 652904
+loading frame 165
+Frame-to-model icp
+iter 0: avg loss = 3.4449e-04, inlier count = 142029
+iter 1: avg loss = 2.5948e-04, inlier count = 141490
+iter 2: avg loss = 2.5014e-04, inlier count = 140996
+iter 3: avg loss = 2.4811e-04, inlier count = 140804
+iter 4: avg loss = 2.4715e-04, inlier count = 140742
+iter 5: avg loss = 2.4694e-04, inlier count = 140733
+iter 6: avg loss = 2.4686e-04, inlier count = 140730
+iter 7: avg loss = 2.4684e-04, inlier count = 140732
+iter 8: avg loss = 2.4682e-04, inlier count = 140731
+iter 9: avg loss = 2.4683e-04, inlier count = 140732
+Point-based fusion
+updated: 114750, added: 5357, total: 658261
+loading frame 166
+Frame-to-model icp
+iter 0: avg loss = 3.1227e-04, inlier count = 142276
+iter 1: avg loss = 2.5592e-04, inlier count = 141745
+iter 2: avg loss = 2.5010e-04, inlier count = 141381
+iter 3: avg loss = 2.4855e-04, inlier count = 141217
+iter 4: avg loss = 2.4822e-04, inlier count = 141177
+iter 5: avg loss = 2.4803e-04, inlier count = 141164
+iter 6: avg loss = 2.4790e-04, inlier count = 141153
+iter 7: avg loss = 2.4783e-04, inlier count = 141151
+iter 8: avg loss = 2.4783e-04, inlier count = 141152
+iter 9: avg loss = 2.4782e-04, inlier count = 141151
+Point-based fusion
+updated: 116518, added: 4904, total: 663165
+loading frame 167
+Frame-to-model icp
+iter 0: avg loss = 3.2818e-04, inlier count = 140069
+iter 1: avg loss = 2.5859e-04, inlier count = 142164
+iter 2: avg loss = 2.5183e-04, inlier count = 141956
+iter 3: avg loss = 2.5075e-04, inlier count = 141860
+iter 4: avg loss = 2.5032e-04, inlier count = 141839
+iter 5: avg loss = 2.5003e-04, inlier count = 141817
+iter 6: avg loss = 2.5003e-04, inlier count = 141817
+iter 7: avg loss = 2.5003e-04, inlier count = 141815
+iter 8: avg loss = 2.5003e-04, inlier count = 141815
+iter 9: avg loss = 2.5003e-04, inlier count = 141815
+Point-based fusion
+updated: 117623, added: 4570, total: 667735
+loading frame 168
+Frame-to-model icp
+iter 0: avg loss = 2.8665e-04, inlier count = 143867
+iter 1: avg loss = 2.5524e-04, inlier count = 142385
+iter 2: avg loss = 2.5123e-04, inlier count = 142017
+iter 3: avg loss = 2.5063e-04, inlier count = 141923
+iter 4: avg loss = 2.5045e-04, inlier count = 141933
+iter 5: avg loss = 2.5036e-04, inlier count = 141930
+iter 6: avg loss = 2.5034e-04, inlier count = 141932
+iter 7: avg loss = 2.5034e-04, inlier count = 141929
+iter 8: avg loss = 2.5034e-04, inlier count = 141929
+iter 9: avg loss = 2.5035e-04, inlier count = 141930
+Point-based fusion
+updated: 117901, added: 4826, total: 672561
+loading frame 169
+Frame-to-model icp
+iter 0: avg loss = 3.3314e-04, inlier count = 141062
+iter 1: avg loss = 2.5984e-04, inlier count = 142422
+iter 2: avg loss = 2.5244e-04, inlier count = 141938
+iter 3: avg loss = 2.5122e-04, inlier count = 141755
+iter 4: avg loss = 2.5041e-04, inlier count = 141664
+iter 5: avg loss = 2.5022e-04, inlier count = 141647
+iter 6: avg loss = 2.5014e-04, inlier count = 141641
+iter 7: avg loss = 2.5011e-04, inlier count = 141641
+iter 8: avg loss = 2.5010e-04, inlier count = 141641
+iter 9: avg loss = 2.5009e-04, inlier count = 141642
+Point-based fusion
+updated: 118487, added: 4826, total: 677387
+loading frame 170
+Frame-to-model icp
+iter 0: avg loss = 3.0461e-04, inlier count = 144047
+iter 1: avg loss = 2.5724e-04, inlier count = 142724
+iter 2: avg loss = 2.5151e-04, inlier count = 142342
+iter 3: avg loss = 2.4950e-04, inlier count = 142164
+iter 4: avg loss = 2.4870e-04, inlier count = 142102
+iter 5: avg loss = 2.4830e-04, inlier count = 142079
+iter 6: avg loss = 2.4816e-04, inlier count = 142069
+iter 7: avg loss = 2.4810e-04, inlier count = 142065
+iter 8: avg loss = 2.4802e-04, inlier count = 142058
+iter 9: avg loss = 2.4806e-04, inlier count = 142054
+Point-based fusion
+updated: 120051, added: 4407, total: 681794
+loading frame 171
+Frame-to-model icp
+iter 0: avg loss = 2.8232e-04, inlier count = 143546
+iter 1: avg loss = 2.5153e-04, inlier count = 142752
+iter 2: avg loss = 2.4748e-04, inlier count = 142351
+iter 3: avg loss = 2.4676e-04, inlier count = 142297
+iter 4: avg loss = 2.4652e-04, inlier count = 142257
+iter 5: avg loss = 2.4632e-04, inlier count = 142242
+iter 6: avg loss = 2.4623e-04, inlier count = 142241
+iter 7: avg loss = 2.4612e-04, inlier count = 142236
+iter 8: avg loss = 2.4609e-04, inlier count = 142233
+iter 9: avg loss = 2.4611e-04, inlier count = 142233
+Point-based fusion
+updated: 121629, added: 3571, total: 685365
+loading frame 172
+Frame-to-model icp
+iter 0: avg loss = 2.7143e-04, inlier count = 142950
+iter 1: avg loss = 2.4711e-04, inlier count = 142250
+iter 2: avg loss = 2.4478e-04, inlier count = 141976
+iter 3: avg loss = 2.4458e-04, inlier count = 141884
+iter 4: avg loss = 2.4448e-04, inlier count = 141863
+iter 5: avg loss = 2.4443e-04, inlier count = 141861
+iter 6: avg loss = 2.4444e-04, inlier count = 141868
+iter 7: avg loss = 2.4443e-04, inlier count = 141867
+iter 8: avg loss = 2.4443e-04, inlier count = 141868
+iter 9: avg loss = 2.4442e-04, inlier count = 141867
+Point-based fusion
+updated: 121173, added: 4139, total: 689504
+loading frame 173
+Frame-to-model icp
+iter 0: avg loss = 2.6133e-04, inlier count = 142404
+iter 1: avg loss = 2.4320e-04, inlier count = 142693
+iter 2: avg loss = 2.4241e-04, inlier count = 142597
+iter 3: avg loss = 2.4200e-04, inlier count = 142552
+iter 4: avg loss = 2.4187e-04, inlier count = 142535
+iter 5: avg loss = 2.4179e-04, inlier count = 142533
+iter 6: avg loss = 2.4183e-04, inlier count = 142533
+iter 7: avg loss = 2.4182e-04, inlier count = 142532
+iter 8: avg loss = 2.4183e-04, inlier count = 142532
+iter 9: avg loss = 2.4183e-04, inlier count = 142532
+Point-based fusion
+updated: 121815, added: 4270, total: 693774
+loading frame 174
+Frame-to-model icp
+iter 0: avg loss = 2.5288e-04, inlier count = 141991
+iter 1: avg loss = 2.3292e-04, inlier count = 143357
+iter 2: avg loss = 2.3620e-04, inlier count = 143584
+iter 3: avg loss = 2.3781e-04, inlier count = 143708
+iter 4: avg loss = 2.3870e-04, inlier count = 143775
+iter 5: avg loss = 2.3906e-04, inlier count = 143792
+iter 6: avg loss = 2.3936e-04, inlier count = 143809
+iter 7: avg loss = 2.3940e-04, inlier count = 143811
+iter 8: avg loss = 2.3939e-04, inlier count = 143812
+iter 9: avg loss = 2.3939e-04, inlier count = 143814
+Point-based fusion
+updated: 124887, added: 2844, total: 696618
+loading frame 175
+Frame-to-model icp
+iter 0: avg loss = 2.5021e-04, inlier count = 140335
+iter 1: avg loss = 2.2298e-04, inlier count = 143142
+iter 2: avg loss = 2.3083e-04, inlier count = 143998
+iter 3: avg loss = 2.3476e-04, inlier count = 144305
+iter 4: avg loss = 2.3649e-04, inlier count = 144459
+iter 5: avg loss = 2.3730e-04, inlier count = 144523
+iter 6: avg loss = 2.3760e-04, inlier count = 144541
+iter 7: avg loss = 2.3780e-04, inlier count = 144560
+iter 8: avg loss = 2.3784e-04, inlier count = 144562
+iter 9: avg loss = 2.3789e-04, inlier count = 144568
+Point-based fusion
+updated: 125250, added: 3292, total: 699910
+loading frame 176
+Frame-to-model icp
+iter 0: avg loss = 2.2462e-04, inlier count = 143236
+iter 1: avg loss = 2.2123e-04, inlier count = 144719
+iter 2: avg loss = 2.2767e-04, inlier count = 145403
+iter 3: avg loss = 2.3050e-04, inlier count = 145661
+iter 4: avg loss = 2.3178e-04, inlier count = 145763
+iter 5: avg loss = 2.3246e-04, inlier count = 145797
+iter 6: avg loss = 2.3287e-04, inlier count = 145820
+iter 7: avg loss = 2.3298e-04, inlier count = 145830
+iter 8: avg loss = 2.3310e-04, inlier count = 145840
+iter 9: avg loss = 2.3309e-04, inlier count = 145837
+Point-based fusion
+updated: 127850, added: 2594, total: 702504
+loading frame 177
+Frame-to-model icp
+iter 0: avg loss = 2.5630e-04, inlier count = 140105
+iter 1: avg loss = 2.1707e-04, inlier count = 144895
+iter 2: avg loss = 2.2129e-04, inlier count = 145277
+iter 3: avg loss = 2.2392e-04, inlier count = 145468
+iter 4: avg loss = 2.2536e-04, inlier count = 145567
+iter 5: avg loss = 2.2594e-04, inlier count = 145604
+iter 6: avg loss = 2.2648e-04, inlier count = 145633
+iter 7: avg loss = 2.2663e-04, inlier count = 145640
+iter 8: avg loss = 2.2661e-04, inlier count = 145645
+iter 9: avg loss = 2.2661e-04, inlier count = 145646
+Point-based fusion
+updated: 128805, added: 2235, total: 704739
+loading frame 178
+Frame-to-model icp
+iter 0: avg loss = 2.6242e-04, inlier count = 138645
+iter 1: avg loss = 2.1143e-04, inlier count = 143911
+iter 2: avg loss = 2.1427e-04, inlier count = 144151
+iter 3: avg loss = 2.1759e-04, inlier count = 144321
+iter 4: avg loss = 2.1884e-04, inlier count = 144420
+iter 5: avg loss = 2.1974e-04, inlier count = 144485
+iter 6: avg loss = 2.1997e-04, inlier count = 144511
+iter 7: avg loss = 2.2011e-04, inlier count = 144522
+iter 8: avg loss = 2.2015e-04, inlier count = 144524
+iter 9: avg loss = 2.2017e-04, inlier count = 144525
+Point-based fusion
+updated: 128643, added: 2676, total: 707415
+loading frame 179
+Frame-to-model icp
+iter 0: avg loss = 2.2607e-04, inlier count = 144205
+iter 1: avg loss = 2.1006e-04, inlier count = 143708
+iter 2: avg loss = 2.1241e-04, inlier count = 143632
+iter 3: avg loss = 2.1444e-04, inlier count = 143719
+iter 4: avg loss = 2.1521e-04, inlier count = 143781
+iter 5: avg loss = 2.1550e-04, inlier count = 143811
+iter 6: avg loss = 2.1563e-04, inlier count = 143824
+iter 7: avg loss = 2.1585e-04, inlier count = 143835
+iter 8: avg loss = 2.1593e-04, inlier count = 143837
+iter 9: avg loss = 2.1599e-04, inlier count = 143839
+Point-based fusion
+updated: 128115, added: 3431, total: 710846
+loading frame 180
+Frame-to-model icp
+iter 0: avg loss = 2.3169e-04, inlier count = 145111
+iter 1: avg loss = 2.0930e-04, inlier count = 143688
+iter 2: avg loss = 2.0996e-04, inlier count = 143453
+iter 3: avg loss = 2.1039e-04, inlier count = 143403
+iter 4: avg loss = 2.1048e-04, inlier count = 143401
+iter 5: avg loss = 2.1070e-04, inlier count = 143411
+iter 6: avg loss = 2.1080e-04, inlier count = 143417
+iter 7: avg loss = 2.1085e-04, inlier count = 143417
+iter 8: avg loss = 2.1084e-04, inlier count = 143417
+iter 9: avg loss = 2.1084e-04, inlier count = 143417
+Point-based fusion
+updated: 128642, added: 3130, total: 713976
+loading frame 181
+Frame-to-model icp
+iter 0: avg loss = 2.4406e-04, inlier count = 144564
+iter 1: avg loss = 2.1136e-04, inlier count = 143058
+iter 2: avg loss = 2.0857e-04, inlier count = 142623
+iter 3: avg loss = 2.0826e-04, inlier count = 142502
+iter 4: avg loss = 2.0802e-04, inlier count = 142476
+iter 5: avg loss = 2.0805e-04, inlier count = 142469
+iter 6: avg loss = 2.0803e-04, inlier count = 142469
+iter 7: avg loss = 2.0804e-04, inlier count = 142469
+iter 8: avg loss = 2.0806e-04, inlier count = 142470
+iter 9: avg loss = 2.0808e-04, inlier count = 142469
+Point-based fusion
+updated: 127405, added: 3959, total: 717935
+loading frame 182
+Frame-to-model icp
+iter 0: avg loss = 2.2518e-04, inlier count = 143483
+iter 1: avg loss = 2.0580e-04, inlier count = 142610
+iter 2: avg loss = 2.0533e-04, inlier count = 142337
+iter 3: avg loss = 2.0558e-04, inlier count = 142283
+iter 4: avg loss = 2.0574e-04, inlier count = 142271
+iter 5: avg loss = 2.0582e-04, inlier count = 142266
+iter 6: avg loss = 2.0582e-04, inlier count = 142263
+iter 7: avg loss = 2.0582e-04, inlier count = 142262
+iter 8: avg loss = 2.0582e-04, inlier count = 142261
+iter 9: avg loss = 2.0581e-04, inlier count = 142261
+Point-based fusion
+updated: 127542, added: 3846, total: 721781
+loading frame 183
+Frame-to-model icp
+iter 0: avg loss = 2.3143e-04, inlier count = 143446
+iter 1: avg loss = 2.0416e-04, inlier count = 142536
+iter 2: avg loss = 2.0399e-04, inlier count = 142295
+iter 3: avg loss = 2.0422e-04, inlier count = 142275
+iter 4: avg loss = 2.0440e-04, inlier count = 142279
+iter 5: avg loss = 2.0438e-04, inlier count = 142283
+iter 6: avg loss = 2.0439e-04, inlier count = 142283
+iter 7: avg loss = 2.0438e-04, inlier count = 142283
+iter 8: avg loss = 2.0438e-04, inlier count = 142283
+iter 9: avg loss = 2.0438e-04, inlier count = 142283
+Point-based fusion
+updated: 128212, added: 3717, total: 725498
+loading frame 184
+Frame-to-model icp
+iter 0: avg loss = 2.6723e-04, inlier count = 142496
+iter 1: avg loss = 2.0882e-04, inlier count = 142155
+iter 2: avg loss = 2.0545e-04, inlier count = 141705
+iter 3: avg loss = 2.0526e-04, inlier count = 141540
+iter 4: avg loss = 2.0512e-04, inlier count = 141499
+iter 5: avg loss = 2.0495e-04, inlier count = 141477
+iter 6: avg loss = 2.0492e-04, inlier count = 141474
+iter 7: avg loss = 2.0492e-04, inlier count = 141472
+iter 8: avg loss = 2.0492e-04, inlier count = 141474
+iter 9: avg loss = 2.0492e-04, inlier count = 141473
+Point-based fusion
+updated: 126892, added: 3934, total: 729432
+loading frame 185
+Frame-to-model icp
+iter 0: avg loss = 2.8493e-04, inlier count = 140966
+iter 1: avg loss = 2.1668e-04, inlier count = 141381
+iter 2: avg loss = 2.0905e-04, inlier count = 140714
+iter 3: avg loss = 2.0707e-04, inlier count = 140469
+iter 4: avg loss = 2.0662e-04, inlier count = 140403
+iter 5: avg loss = 2.0679e-04, inlier count = 140378
+iter 6: avg loss = 2.0682e-04, inlier count = 140367
+iter 7: avg loss = 2.0685e-04, inlier count = 140368
+iter 8: avg loss = 2.0685e-04, inlier count = 140365
+iter 9: avg loss = 2.0683e-04, inlier count = 140364
+Point-based fusion
+updated: 125529, added: 4690, total: 734122
+loading frame 186
+Frame-to-model icp
+iter 0: avg loss = 3.6814e-04, inlier count = 137071
+iter 1: avg loss = 2.3135e-04, inlier count = 140697
+iter 2: avg loss = 2.1413e-04, inlier count = 140098
+iter 3: avg loss = 2.1148e-04, inlier count = 139685
+iter 4: avg loss = 2.1127e-04, inlier count = 139554
+iter 5: avg loss = 2.1114e-04, inlier count = 139509
+iter 6: avg loss = 2.1095e-04, inlier count = 139489
+iter 7: avg loss = 2.1091e-04, inlier count = 139479
+iter 8: avg loss = 2.1090e-04, inlier count = 139480
+iter 9: avg loss = 2.1092e-04, inlier count = 139480
+Point-based fusion
+updated: 125101, added: 4577, total: 738699
+loading frame 187
+Frame-to-model icp
+iter 0: avg loss = 3.3969e-04, inlier count = 137837
+iter 1: avg loss = 2.3712e-04, inlier count = 139355
+iter 2: avg loss = 2.1929e-04, inlier count = 138816
+iter 3: avg loss = 2.1696e-04, inlier count = 138378
+iter 4: avg loss = 2.1618e-04, inlier count = 138237
+iter 5: avg loss = 2.1595e-04, inlier count = 138190
+iter 6: avg loss = 2.1593e-04, inlier count = 138172
+iter 7: avg loss = 2.1589e-04, inlier count = 138167
+iter 8: avg loss = 2.1587e-04, inlier count = 138162
+iter 9: avg loss = 2.1586e-04, inlier count = 138163
+Point-based fusion
+updated: 124334, added: 5051, total: 743750
+loading frame 188
+Frame-to-model icp
+iter 0: avg loss = 3.3249e-04, inlier count = 138127
+iter 1: avg loss = 2.4542e-04, inlier count = 138580
+iter 2: avg loss = 2.2722e-04, inlier count = 138180
+iter 3: avg loss = 2.2399e-04, inlier count = 137841
+iter 4: avg loss = 2.2321e-04, inlier count = 137709
+iter 5: avg loss = 2.2287e-04, inlier count = 137663
+iter 6: avg loss = 2.2275e-04, inlier count = 137654
+iter 7: avg loss = 2.2274e-04, inlier count = 137650
+iter 8: avg loss = 2.2274e-04, inlier count = 137651
+iter 9: avg loss = 2.2274e-04, inlier count = 137651
+Point-based fusion
+updated: 124412, added: 4654, total: 748404
+loading frame 189
+Frame-to-model icp
+iter 0: avg loss = 3.2759e-04, inlier count = 137194
+iter 1: avg loss = 2.4727e-04, inlier count = 137942
+iter 2: avg loss = 2.3253e-04, inlier count = 137652
+iter 3: avg loss = 2.2889e-04, inlier count = 137232
+iter 4: avg loss = 2.2818e-04, inlier count = 137059
+iter 5: avg loss = 2.2782e-04, inlier count = 137001
+iter 6: avg loss = 2.2752e-04, inlier count = 136982
+iter 7: avg loss = 2.2746e-04, inlier count = 136976
+iter 8: avg loss = 2.2745e-04, inlier count = 136971
+iter 9: avg loss = 2.2742e-04, inlier count = 136973
+Point-based fusion
+updated: 124132, added: 4788, total: 753192
+loading frame 190
+Frame-to-model icp
+iter 0: avg loss = 3.1146e-04, inlier count = 137202
+iter 1: avg loss = 2.5245e-04, inlier count = 137520
+iter 2: avg loss = 2.3630e-04, inlier count = 136999
+iter 3: avg loss = 2.3295e-04, inlier count = 136753
+iter 4: avg loss = 2.3248e-04, inlier count = 136554
+iter 5: avg loss = 2.3195e-04, inlier count = 136489
+iter 6: avg loss = 2.3183e-04, inlier count = 136457
+iter 7: avg loss = 2.3183e-04, inlier count = 136446
+iter 8: avg loss = 2.3183e-04, inlier count = 136444
+iter 9: avg loss = 2.3186e-04, inlier count = 136445
+Point-based fusion
+updated: 123941, added: 4916, total: 758108
+loading frame 191
+Frame-to-model icp
+iter 0: avg loss = 3.3280e-04, inlier count = 135261
+iter 1: avg loss = 2.5803e-04, inlier count = 136616
+iter 2: avg loss = 2.4202e-04, inlier count = 136592
+iter 3: avg loss = 2.3940e-04, inlier count = 136424
+iter 4: avg loss = 2.3872e-04, inlier count = 136297
+iter 5: avg loss = 2.3844e-04, inlier count = 136264
+iter 6: avg loss = 2.3821e-04, inlier count = 136236
+iter 7: avg loss = 2.3829e-04, inlier count = 136221
+iter 8: avg loss = 2.3828e-04, inlier count = 136218
+iter 9: avg loss = 2.3828e-04, inlier count = 136218
+Point-based fusion
+updated: 123907, added: 4854, total: 762962
+loading frame 192
+Frame-to-model icp
+iter 0: avg loss = 4.5148e-04, inlier count = 120752
+iter 1: avg loss = 2.7214e-04, inlier count = 135232
+iter 2: avg loss = 2.5301e-04, inlier count = 136188
+iter 3: avg loss = 2.4908e-04, inlier count = 136147
+iter 4: avg loss = 2.4867e-04, inlier count = 136025
+iter 5: avg loss = 2.4837e-04, inlier count = 135966
+iter 6: avg loss = 2.4810e-04, inlier count = 135929
+iter 7: avg loss = 2.4814e-04, inlier count = 135918
+iter 8: avg loss = 2.4818e-04, inlier count = 135909
+iter 9: avg loss = 2.4817e-04, inlier count = 135911
+Point-based fusion
+updated: 123881, added: 4929, total: 767891
+loading frame 193
+Frame-to-model icp
+iter 0: avg loss = 3.2838e-04, inlier count = 133421
+iter 1: avg loss = 2.7153e-04, inlier count = 135737
+iter 2: avg loss = 2.5985e-04, inlier count = 135944
+iter 3: avg loss = 2.5605e-04, inlier count = 135898
+iter 4: avg loss = 2.5494e-04, inlier count = 135744
+iter 5: avg loss = 2.5470e-04, inlier count = 135648
+iter 6: avg loss = 2.5454e-04, inlier count = 135613
+iter 7: avg loss = 2.5441e-04, inlier count = 135609
+iter 8: avg loss = 2.5436e-04, inlier count = 135602
+iter 9: avg loss = 2.5431e-04, inlier count = 135600
+Point-based fusion
+updated: 122753, added: 5232, total: 773123
+loading frame 194
+Frame-to-model icp
+iter 0: avg loss = 3.6692e-04, inlier count = 125512
+iter 1: avg loss = 2.7619e-04, inlier count = 134220
+iter 2: avg loss = 2.5993e-04, inlier count = 135299
+iter 3: avg loss = 2.5654e-04, inlier count = 135417
+iter 4: avg loss = 2.5570e-04, inlier count = 135266
+iter 5: avg loss = 2.5575e-04, inlier count = 135186
+iter 6: avg loss = 2.5604e-04, inlier count = 135173
+iter 7: avg loss = 2.5599e-04, inlier count = 135139
+iter 8: avg loss = 2.5599e-04, inlier count = 135140
+iter 9: avg loss = 2.5592e-04, inlier count = 135132
+Point-based fusion
+updated: 122240, added: 5527, total: 778650
+loading frame 195
+Frame-to-model icp
+iter 0: avg loss = 3.6456e-04, inlier count = 122448
+iter 1: avg loss = 2.7295e-04, inlier count = 132334
+iter 2: avg loss = 2.5881e-04, inlier count = 134584
+iter 3: avg loss = 2.5605e-04, inlier count = 134861
+iter 4: avg loss = 2.5632e-04, inlier count = 134824
+iter 5: avg loss = 2.5614e-04, inlier count = 134762
+iter 6: avg loss = 2.5648e-04, inlier count = 134736
+iter 7: avg loss = 2.5648e-04, inlier count = 134730
+iter 8: avg loss = 2.5651e-04, inlier count = 134730
+iter 9: avg loss = 2.5655e-04, inlier count = 134733
+Point-based fusion
+updated: 122949, added: 5176, total: 783826
+loading frame 196
+Frame-to-model icp
+iter 0: avg loss = 3.2485e-04, inlier count = 129075
+iter 1: avg loss = 2.6544e-04, inlier count = 133144
+iter 2: avg loss = 2.5688e-04, inlier count = 134190
+iter 3: avg loss = 2.5660e-04, inlier count = 134474
+iter 4: avg loss = 2.5673e-04, inlier count = 134456
+iter 5: avg loss = 2.5744e-04, inlier count = 134440
+iter 6: avg loss = 2.5810e-04, inlier count = 134453
+iter 7: avg loss = 2.5824e-04, inlier count = 134433
+iter 8: avg loss = 2.5837e-04, inlier count = 134429
+iter 9: avg loss = 2.5839e-04, inlier count = 134418
+Point-based fusion
+updated: 122289, added: 5308, total: 789134
+loading frame 197
+Frame-to-model icp
+iter 0: avg loss = 3.0693e-04, inlier count = 131342
+iter 1: avg loss = 2.6347e-04, inlier count = 132744
+iter 2: avg loss = 2.5712e-04, inlier count = 133677
+iter 3: avg loss = 2.5780e-04, inlier count = 133972
+iter 4: avg loss = 2.5901e-04, inlier count = 134025
+iter 5: avg loss = 2.6025e-04, inlier count = 134062
+iter 6: avg loss = 2.6071e-04, inlier count = 134024
+iter 7: avg loss = 2.6124e-04, inlier count = 134048
+iter 8: avg loss = 2.6146e-04, inlier count = 134049
+iter 9: avg loss = 2.6153e-04, inlier count = 134051
+Point-based fusion
+updated: 122330, added: 5287, total: 794421
+loading frame 198
+Frame-to-model icp
+iter 0: avg loss = 3.2405e-04, inlier count = 130255
+iter 1: avg loss = 2.6073e-04, inlier count = 132780
+iter 2: avg loss = 2.5711e-04, inlier count = 133636
+iter 3: avg loss = 2.5878e-04, inlier count = 133970
+iter 4: avg loss = 2.6070e-04, inlier count = 134106
+iter 5: avg loss = 2.6166e-04, inlier count = 134086
+iter 6: avg loss = 2.6232e-04, inlier count = 134103
+iter 7: avg loss = 2.6221e-04, inlier count = 134081
+iter 8: avg loss = 2.6226e-04, inlier count = 134077
+iter 9: avg loss = 2.6230e-04, inlier count = 134083
+Point-based fusion
+updated: 123175, added: 4386, total: 798807
+loading frame 199
+Frame-to-model icp
+iter 0: avg loss = 2.9270e-04, inlier count = 131687
+iter 1: avg loss = 2.5933e-04, inlier count = 132783
+iter 2: avg loss = 2.5714e-04, inlier count = 133320
+iter 3: avg loss = 2.5889e-04, inlier count = 133685
+iter 4: avg loss = 2.5998e-04, inlier count = 133813
+iter 5: avg loss = 2.6087e-04, inlier count = 133846
+iter 6: avg loss = 2.6151e-04, inlier count = 133849
+iter 7: avg loss = 2.6198e-04, inlier count = 133856
+iter 8: avg loss = 2.6213e-04, inlier count = 133858
+iter 9: avg loss = 2.6227e-04, inlier count = 133869
+Point-based fusion
+updated: 123952, added: 4413, total: 803220
+loading frame 200
+Frame-to-model icp
+iter 0: avg loss = 3.0876e-04, inlier count = 129959
+iter 1: avg loss = 2.6072e-04, inlier count = 132083
+iter 2: avg loss = 2.5766e-04, inlier count = 132788
+iter 3: avg loss = 2.5828e-04, inlier count = 132969
+iter 4: avg loss = 2.5876e-04, inlier count = 133028
+iter 5: avg loss = 2.5929e-04, inlier count = 133055
+iter 6: avg loss = 2.5912e-04, inlier count = 133023
+iter 7: avg loss = 2.5926e-04, inlier count = 133024
+iter 8: avg loss = 2.5934e-04, inlier count = 133023
+iter 9: avg loss = 2.5936e-04, inlier count = 133023
+Point-based fusion
+updated: 123521, added: 4491, total: 807711

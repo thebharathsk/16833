@@ -39,4 +39,11 @@
 
 \tableofcontents
 
+\section{Iterative Closest Point}
+\subsection{Projective Data Association}
+For a source point to have a valid correspondence in target vertex map, it's projected coordinates must fall within the bounds of the vertex map and have a positive depth. Therefore, assuming that the u, v coordinates are rounded to integers and the height and width are zero-indexed, we get:
+\[0 \leq  u < W\]
+\[0 \leq  v < H\]
+\[d > 0\]
+
 \end{document}

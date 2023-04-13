@@ -7,7 +7,6 @@ import os
 import numpy as np
 import open3d as o3d
 import matplotlib.pyplot as plt
-from scipy.sparse.linalg import spsolve
 
 import argparse
 import transforms
@@ -54,7 +53,7 @@ def find_projective_correspondence(source_points,
     
     #ensure vertices lie within size of image
     mask = np.logical_and(np.logical_and(target_us >= 0, target_vs >= 0),\
-                        np.logical_and(target_us < w, target_vs < h)) #N_valid
+                        np.logical_and(target_us <= w-1, target_vs <= h-1)) #N_valid
     
     #ensure positive depth
     mask = np.logical_and(mask, target_ds > 0) #N_valid
@@ -70,7 +69,7 @@ def find_projective_correspondence(source_points,
     mask = np.zeros_like(target_us).astype(bool) #N_valid
     
     #corresponding target points
-    tgt_pts = target_vertex_map[target_vs, target_us,:] #N_validx3
+    tgt_pts = target_vertex_map[target_vs, target_us] #N_validx3
     
     mask = np.linalg.norm(T_source_points - tgt_pts, axis=1) <= dist_diff #N_valid
     # End of TODO
@@ -89,7 +88,7 @@ def build_linear_system(source_points, target_points, target_normals, T):
     R = T[:3, :3]
     t = T[:3, 3:]
 
-    p_prime = (R @ source_points.T + t).T #
+    p_prime = (R @ source_points.T + t).T
     q = target_points
     n_q = target_normals
 
@@ -107,15 +106,15 @@ def build_linear_system(source_points, target_points, target_normals, T):
     n_q_T = np.swapaxes(n_q, -2, -1) #N_validx1x3
     
     #G
-    G = np.zeros((M, 3, 6))
+    G = np.zeros((M, 3, 6)) #N_validx3x6
     
     #skew symmetric
-    G[:,0,1] = -p_prime[:,2].flatten()
-    G[:,0,2] = p_prime[:,1].flatten()
-    G[:,1,0] = p_prime[:,2].flatten()
-    G[:,1,2] = -p_prime[:,0].flatten()
-    G[:,2,0] = -p_prime[:,1].flatten()
-    G[:,2,1] = p_prime[:,0].flatten()
+    G[:,0,1] = p_prime[:,2].flatten()
+    G[:,0,2] = -p_prime[:,1].flatten()
+    G[:,1,0] = -p_prime[:,2].flatten()
+    G[:,1,2] = p_prime[:,0].flatten()
+    G[:,2,0] = p_prime[:,1].flatten()
+    G[:,2,1] = -p_prime[:,0].flatten()
     
     #identity
     G[:,0,3] = 1
@@ -126,7 +125,7 @@ def build_linear_system(source_points, target_points, target_normals, T):
     A = n_q_T@G #Nx1x6
     
     #b
-    b = n_q_T@(q - p_prime) #Nx1
+    b = n_q_T@(q - p_prime) #Nx1x1
     
     #reshape
     A = A[:,0,:]
@@ -180,7 +179,7 @@ def solve(A, b):
     # TODO: write your relevant solver
     #MY IMPLEMENTATION
     
-    x = spsolve(A.T @ A, A.T @ b)
+    x = np.linalg.lstsq(A, b)[0]
     
     return x
 
@@ -225,7 +224,7 @@ def icp(source_points,
         A, b = build_linear_system(corres_source_points, corres_target_points,
                                    corres_target_normals, T)
         delta = solve(A, b)
-
+        
         # Update and output
         T = pose2transformation(delta) @ T
         loss = np.mean(b**2)
@@ -292,7 +291,7 @@ if __name__ == '__main__':
             target_normal_map,
             intrinsic,
             np.eye(4),
-            debug_association=False)
+            debug_association=True)
 
     # Visualize after ICP
     o3d_utility.visualize_icp(source_points, target_vertex_map.reshape(
