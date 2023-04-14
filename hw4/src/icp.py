@@ -92,6 +92,7 @@ def build_linear_system(source_points, target_points, target_normals, T):
     q = target_points
     n_q = target_normals
 
+    #MY IMPLEMENTATION
     #add additional dimension at the end
     p_prime = p_prime[:,:,np.newaxis] #N_validx3x1
     q = q[:,:,np.newaxis] #N_validx3x1
@@ -101,7 +102,6 @@ def build_linear_system(source_points, target_points, target_normals, T):
     b = np.zeros((M, ))
 
     # TODO: build the linear system
-    #MY IMPLEMENTATION
     #transpose normals
     n_q_T = np.swapaxes(n_q, -2, -1) #N_validx1x3
     

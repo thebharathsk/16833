@@ -274,6 +274,8 @@ if __name__ == '__main__':
     intrinsic /= down_factor
     intrinsic[2, 2] = 1
 
+    num_points = 0
+    
     for i in range(args.start_idx, args.end_idx + 1):
         print('Fusing frame {:03d}'.format(i))
         source_depth = o3d.io.read_image('{}/{}.png'.format(depth_path, i))
@@ -292,6 +294,9 @@ if __name__ == '__main__':
         m.fuse(source_vertex_map, source_normal_map, source_color_map,
                intrinsic, gt_poses[i])
 
+        num_points+=source_vertex_map.size//3
+        print('Total number of points = ', num_points)
+        
     global_pcd = o3d_utility.make_point_cloud(m.points,
                                               colors=m.colors,
                                               normals=m.normals)
