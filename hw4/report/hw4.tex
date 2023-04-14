@@ -50,7 +50,7 @@ For a source point to have a valid correspondence in target vertex map, it's pro
 \subsubsection{Distance Filtering}
 Distance filtering is needed for a few reasons:
 \begin{enumerate}
-  \item We assume that change in pose is small between consecutive measurements. This implies that change in vertex map between consecutive frames is also small. So it makes sense to apply a distance thresholds
+  \item We assume that change in pose is small between consecutive measurements. This implies that change in vertex map between consecutive frames is also small. So it makes sense to apply distance thresholds
   \item Vertex map is constructed from depth map and depth measurements can be corrupted for several reasons such as noise, wildly inaccurate measurements due to surface properties of materials whose depth is being measured or in practical settings due to objects entering the scene between frames. Therefore, applying distance threshold is a reasonable way to overcome these issues.
 \end{enumerate}
 \subsection{Linearization}
@@ -152,16 +152,13 @@ The merge operation for points and normals can be written as
 \subsection{Results}
 \begin{figure}[H]
   \centering
-  \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\textwidth]{./results/fusion/rgb.png}
-    \caption{RGB}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\textwidth]{./results/fusion/normals.png}
-    \caption{Normals}
-  \end{subfigure}
-  \caption{Result of Point-based Fusion}
+  \includegraphics[width=0.8\textwidth]{./results/fusion/rgb.png}
+  \caption{RGB result}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./results/fusion/normals.png}
+  \caption{Normals result}
 \end{figure}
 Number of points is after fusion is 1362157. The number of points obtained by simple concatenation is 15360000. Therefore, the compression ratio is:
 \[\text{Compression Ratio} = \frac{\text{No. of points before fusion}}{\text{No. of points after fusion}} = \frac{15360000}{1362157} = 11.28\]
@@ -176,6 +173,11 @@ One reason why swapping their roles will not work is that in projective data ass
   \includegraphics[width=0.8\textwidth]{./results/dense_slam/rgb.png}
   \caption{RGB result}
 \end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./results/dense_slam/normals.png}
+  \caption{Normals result}
+\end{figure}
 \subsubsection{Pose}
 \begin{figure}[H]
   \centering
@@ -183,5 +185,69 @@ One reason why swapping their roles will not work is that in projective data ass
   \caption{Drift}
 \end{figure}
 \subsection{[BONUS] Reducing Drift}
-
+The drift has been reduced by simply using the top $10\%$ most stable points (measured using \textit{weights} variable of points in map) for measuring pose using ICP. The change has been implemented in \textit{main.py} as shown below and can be uncommented to verify the implementation.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./results/dense_slam/bonus_code.png}
+  \caption{Code to reduce drift}
+\end{figure}
+\noindent The comparison of RGB, normals and poses computed with and without this change are shown below. The visualizations clearly show that this simple change not only improved the quality of results but also reduced inference time since fewer points are being used in ICP.
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/dense_slam/rgb.png}
+    \caption{Before change}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/dense_slam/bonus_rgb.png}
+    \caption{After change}
+  \end{subfigure}
+  \caption{Comparison of RGB renderings before and after reducing drift}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/dense_slam/rgb_zoomed.png}
+    \caption{Before change}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/dense_slam/bonus_rgb_zoomed.png}
+    \caption{After change}
+  \end{subfigure}
+  \caption{Comparison of zoomed in RGB renderings before and after reducing drift}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/dense_slam/normals.png}
+    \caption{Before change}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/dense_slam/bonus_normals.png}
+    \caption{After change}
+  \end{subfigure}
+  \caption{Comparison of normals before and after reducing drift}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/dense_slam/pose.png}
+    \caption{Before change}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{./results/dense_slam/bonus_pose.png}
+    \caption{After change}
+  \end{subfigure}
+  \caption{Comparison of poses before and after reducing drift}
+\end{figure}
+The losses (at the $9^{th}$ iteration) for the dense SLAM before and after the change are plotted on the same graph below. With the exception of a few frames, the loss for the new method is lower than the loss for default implementation.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./results/dense_slam/bonus_loss.png}
+  \caption{Comparison of losses}
+\end{figure}
 \end{document}

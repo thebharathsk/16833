@@ -73,10 +73,23 @@ if __name__ == '__main__':
         normal_map = normal_map[::down_factor, ::down_factor]
 
         if i > 1:
+            indices = np.arange(len(m.points)).astype(int)
+
+            # if len(m.points) > 2000:
+            #     #sort by weights
+            #     wt_sort_idx = np.argsort(m.weights.flatten())
+                
+            #     #select top 10% weight points
+            #     num_points = int(0.1*len(m.points))
+                
+            #     indices = wt_sort_idx[-num_points:]
+            
+            indices = indices[::2]
+            
             print('Frame-to-model icp')
             T_world_to_cam = np.linalg.inv(T_cam_to_world)
-            T_world_to_cam = icp(m.points[::down_factor],
-                                 m.normals[::down_factor],
+            T_world_to_cam = icp(m.points[indices],
+                                 m.normals[indices],
                                  vertex_map,
                                  normal_map,
                                  intrinsic,

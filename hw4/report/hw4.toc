@@ -13,5 +13,5 @@
 \contentsline {subsection}{\numberline {3.1}Source and Target}{4}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Results}{5}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}RGB}{5}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Pose}{5}{subsubsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.3}[BONUS] Reducing Drift}{5}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.2.2}Pose}{6}{subsubsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}[BONUS] Reducing Drift}{6}{subsection.3.3}%
