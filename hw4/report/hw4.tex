@@ -41,20 +41,19 @@
 
 \section{Iterative Closest Point}
 \subsection{Projective Data Association}
+\subsubsection{Conditions}
 For a source point to have a valid correspondence in target vertex map, it's projected coordinates must fall within the bounds of the vertex map and have a positive depth. Therefore, assuming that the u, v coordinates are rounded to integers and are zero-indexed, we get:
 \[0 \leq  u < W\]
 \[0 \leq  v < H\]
 \[d > 0\]
 
-\subsection{Distance Filtering}
+\subsubsection{Distance Filtering}
 Distance filtering is needed for a few reasons:
 \begin{enumerate}
   \item We assume that change in pose is small between consecutive measurements. This implies that change in vertex map between consecutive frames is also small. So it makes sense to apply a distance thresholds
   \item Vertex map is constructed from depth map and depth measurements can be corrupted for several reasons such as noise, wildly inaccurate measurements due to surface properties of materials whose depth is being measured or in practical settings due to objects entering the scene between frames. Therefore, applying distance threshold is a reasonable way to overcome these issues.
 \end{enumerate}
-\subsection{Optimization}
-
-\subsubsection{Linear System}
+\subsection{Linearization}
 The expression $(\delta R)p_i^{'} + \delta t$ needs to be simplified first.
 \[(\delta R)p_i^{'} + \delta t = \begin{bmatrix}
   1 & -\gamma & \beta\\
@@ -96,6 +95,10 @@ Substituting in the objective function, we get:
 \[=\sum_{i}||A_ix + b_i||^2\]
 Therefore
 \[A_i = n_{q_i}^T\left[[-p_{i}^{'}]_\times | I_{3\times 3}\right] \text{ and } b_i = n_{q_i}^T(p_{i}^{'} - q_i)\]
+\subsection{Optimization}
+
+\subsubsection{Linear System}
+
 The $A_i$ and $b_i$ can be concatenated along row dimension to obtain matrices $A$ and $b$ where
 \[A = \begin{bmatrix}
   A_1 \\
@@ -165,7 +168,7 @@ Number of points is after fusion is 1362157. The number of points obtained by si
 \section{The dense SLAM system}
 \subsection{Source and Target}
 The map is the source and the RGBD input is the target.\\\\
-One reason why swapping their roles will not work is that in projective data association step of ICP, we first project source points into image plane of target to associate every source point to a target point. Filtering is then performed to remove associations where $(u, v)$ coordinates go out of bounds of target image. These steps are made possible by the fact that target is a regular 2D array of size $H\times W$ and is formed by a camera with a known intrinsic parameters. The association and filtering are much harder to perform when target is an unordered point cloud which is the case with the map we store.
+One reason why swapping their roles will not work is that in projective data association step of ICP, we first project source points into image plane of target to associate every source point to a target point. Filtering is then performed to remove associations where $(u, v)$ coordinates go out of bounds of target image. These steps are made possible by the fact that target is a regular 2D array of size $H\times W$ and is formed by a camera with known intrinsic parameters. The association and filtering are much harder to perform when target is an unordered point cloud which is the case with the map we store.
 \subsection{Results}
 \subsubsection{RGB}
 \begin{figure}[H]
